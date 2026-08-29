@@ -1,0 +1,5599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>Basil & Fathima— Wedding Invitation · [DATE]</title>
+<meta name="description" content="Together with their families, Fathima & Basil joyfully invite you to celebrate their wedding — [DATE], [LOCATION], [LOCATION]."/>
+<meta name="theme-color" content="#425c39"/>
+<!-- Open Graph / WhatsApp / social share thumbnail -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="DigiWed Invitations"/>
+<meta property="og:title" content="Fathima &amp; Basil— Wedding Invitation"/>
+<meta property="og:description" content="Together with their families, we joyfully invite you to celebrate — [DATE], [LOCATION], [LOCATION]."/>
+<meta property="og:image" content="https://digiwed161-sys.github.io/ABC_weds_anjali/thumbnail.png?v=3"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Fathima & ABC — [DATE]"/>
+<meta property="og:url" content="https://digiwed161-sys.github.io/ABC_weds_anjali/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Fathima &amp; Basil — Wedding Invitation"/>
+<meta name="twitter:description" content="[DATE] · [LOCATION] · [LOCATION] · [LOCATION]"/>
+<meta name="twitter:image" content="https://digiwed161-sys.github.io/ABC_weds_anjali/thumbnail.png?v=3"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<style>
+
+ /* GOLD SHIMMER ON BASIL & FATHIMA */
+
+.front-names {
+  position: relative;
+  display: inline-block;
+
+  background: linear-gradient(
+    110deg,
+    #d8b76b 0%,
+    #d8b76b 40%,
+    #fff1b8 50%,
+    #d8b76b 60%,
+    #d8b76b 100%
+  );
+
+  background-size: 250% 100%;
+  background-position: 100% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: goldShimmer 5s ease-in-out infinite;
+}
+
+.front-names span {
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  22% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes wedsTwinkle {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 0px rgba(255, 220, 130, 0);
+  }
+
+  50% {
+    opacity: 0.88;
+    text-shadow:
+      0 0 6px rgba(255, 220, 130, 0.5),
+      0 0 14px rgba(255, 200, 80, 0.2);
+  }
+}
+ /* =========================================
+   ANIMATE EXISTING STARS + AIRPLANES
+   ========================================= */
+
+/* Stars / sparkles already on the hero page */
+.hero-star,
+.hero-stars,
+.hero .star,
+.hero .sparkle {
+  animation: starTwinkle 2.8s ease-in-out infinite alternate;
+}
+
+.name-divider {
+  width: 280px;
+  height: 1px;
+  background: var(--gold);
+  margin: 28px auto 30px;
+  opacity: 0.9;
+}
+
+/* Slightly different timing so they don't all blink together */
+.hero-star:nth-child(2),
+.hero-stars:nth-child(2),
+.hero .star:nth-child(2),
+.hero .sparkle:nth-child(2) {
+  animation-delay: .8s;
+}
+
+.hero-star:nth-child(3),
+.hero-stars:nth-child(3),
+.hero .star:nth-child(3),
+.hero .sparkle:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+@keyframes starTwinkle {
+  0% {
+    opacity: .25;
+    transform: scale(.75);
+  }
+
+  50% {
+    opacity: .8;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: .3;
+    transform: scale(.85);
+  }
+}
+
+
+/* =========================================
+   EXISTING AIRPLANES
+   ========================================= */
+
+.hero-plane,
+.hero .plane,
+.hero .airplane {
+  animation: airplaneFloat 10s linear infinite;
+}
+
+@keyframes airplaneFloat {
+
+  0% {
+    transform: translateX(-30px) translateY(0);
+    opacity: .2;
+  }
+
+  15% {
+    opacity: .7;
+  }
+
+  50% {
+    transform: translateX(80px) translateY(-15px);
+    opacity: .8;
+  }
+
+  85% {
+    opacity: .7;
+  }
+
+  100% {
+    transform: translateX(180px) translateY(-30px);
+    opacity: .2;
+  }
+}
+  /* ================================
+   TWINKLING BACKGROUND
+   ================================ */
+
+.wedding-bg-effects{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:5;
+}
+
+/* individual twinkles */
+.twinkle{
+  position:absolute;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:#d8b66a;
+  box-shadow:0 0 7px rgba(216,182,106,.8);
+  animation:twinkleUp 5s ease-in-out infinite;
+  opacity:.35;
+}
+
+.twinkle:nth-child(1){
+  left:12%;
+  bottom:-20px;
+  animation-delay:0s;
+}
+
+.twinkle:nth-child(2){
+  left:38%;
+  bottom:-30px;
+  animation-delay:1.5s;
+}
+
+.twinkle:nth-child(3){
+  left:68%;
+  bottom:-25px;
+  animation-delay:3s;
+}
+
+.twinkle:nth-child(4){
+  left:88%;
+  bottom:-20px;
+  animation-delay:4s;
+}
+
+@keyframes twinkleUp{
+  0%{
+    transform:translateY(0) scale(.5);
+    opacity:0;
+  }
+
+  20%{
+    opacity:.5;
+  }
+
+  50%{
+    opacity:.8;
+  }
+
+  80%{
+    opacity:.4;
+  }
+
+  100%{
+    transform:translateY(-100vh) scale(1);
+    opacity:0;
+  }
+}
+/* REMOVE SECTION DIVIDER BELOW JOIN US */
+.details {
+  border-bottom: none !important;
+}
+
+/* ================================
+   AIRPLANES
+   ================================ */
+
+.bg-plane{
+  position:absolute;
+  font-size:24px;
+  color:#c6a35c;
+  opacity:.65;
+  filter:drop-shadow(0 0 5px rgba(198,163,92,.35));
+}
+
+/* PLANE 1 */
+
+.bg-plane.one{
+  left:-80px;
+  top:25%;
+  animation:planeOne 14s linear infinite;
+}
+
+
+/* PLANE 2 */
+
+.bg-plane.two{
+  right:-80px;
+  top:65%;
+  transform:scaleX(-1);
+  animation:planeTwo 17s linear infinite;
+}
+
+
+@keyframes planeOne{
+  0%{
+    transform:translate(-80px,40px) rotate(-8deg);
+    opacity:0;
+  }
+
+  10%{
+    opacity:.65;
+  }
+
+  90%{
+    opacity:.65;
+  }
+
+  100%{
+    transform:translate(110vw,-180px) rotate(-8deg);
+    opacity:0;
+  }
+}
+
+
+@keyframes planeTwo{
+  0%{
+    transform:translate(80px,30px) scaleX(-1) rotate(8deg);
+    opacity:0;
+  }
+
+  10%{
+    opacity:.65;
+  }
+
+  90%{
+    opacity:.65;
+  }
+
+  100%{
+    transform:translate(-110vw,-150px) scaleX(-1) rotate(8deg);
+    opacity:0;
+  }
+}
+:root{
+  --bg:#f7f2e7;
+  --bg2:#f0e9d8;
+  --bg3:#e8dfc9;
+  --green:#425c39;
+  --green2:#567045;
+  --gold:#a3812f;
+  --gold2:#c6a35c;
+  --ink:#2a2a1c;
+  --ink2:#2a2a1c;
+  --muted:#6f6650;
+  --rule:rgba(163,129,47,.22);
+  --card:#ffffff;
+  --cardborder:rgba(163,129,47,.22);
+  --gold-dim:rgba(163,129,47,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{width:100%;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.6;-webkit-font-smoothing:antialiased;font-weight:600}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* LEAF / DUST TWINKLE */
+.travel-dots{position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.travel-dot{position:absolute;width:3px;height:3px;background:var(--green2);border-radius:50%;opacity:0;animation:twinkle linear infinite}
+.travel-dot:nth-child(1){left:8%;top:20%;animation-duration:3s;animation-delay:0s}
+.travel-dot:nth-child(2){left:22%;top:65%;animation-duration:4s;animation-delay:-.8s}
+.travel-dot:nth-child(3){left:45%;top:15%;animation-duration:3.5s;animation-delay:-1.5s}
+.travel-dot:nth-child(4){left:68%;top:72%;animation-duration:4.5s;animation-delay:-.4s}
+.travel-dot:nth-child(5){left:82%;top:38%;animation-duration:3.2s;animation-delay:-2s}
+.travel-dot:nth-child(6){left:92%;top:55%;animation-duration:3.8s;animation-delay:-1s}
+.travel-dot:nth-child(7){left:35%;top:82%;animation-duration:4.2s;animation-delay:-.3s}
+.travel-dot:nth-child(8){left:55%;top:48%;animation-duration:3.6s;animation-delay:-2.5s}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:.55}}
+
+/* LANDING */
+/* LANDING - MAROON WEDDING COVER */
+
+/* =========================================================
+   ENVELOPE LANDING — FATHIMA & BASIL
+   ========================================================= */
+
+#landing{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      #4b0b0e 0%,
+      #300507 55%,
+      #1d0204 100%
+    );
+
+ display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+  padding:30px 20px;
+  text-align:center;
+
+  overflow:hidden;
+
+  perspective:1400px;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+#landing.gone{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+
+/* OUTER GOLD BORDER */
+
+#landing::before{
+  content:"";
+  position:absolute;
+
+  top:22px;
+  left:22px;
+  right:22px;
+  bottom:22px;
+
+  border:1px solid rgba(198,163,92,.35);
+
+  pointer-events:none;
+}
+
+
+/* INNER GOLD BORDER */
+
+#landing::after{
+  content:"";
+  position:absolute;
+
+  top:30px;
+  left:30px;
+  right:30px;
+  bottom:30px;
+
+  border:1px solid rgba(198,163,92,.15);
+
+  pointer-events:none;
+}
+
+
+/* =========================================================
+   ENVELOPE
+   ========================================================= */
+
+.wedding-cover{
+
+  position:relative;
+
+  width:min(82vw,430px);
+  aspect-ratio:1.45 / 1;
+
+  min-height:0;
+
+  padding:0;
+
+  display:block;
+
+  border:none;
+
+  background:transparent;
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.5);
+
+  cursor:pointer;
+
+  transform-style:preserve-3d;
+
+  animation:
+      envelopeAppear 1.2s cubic-bezier(.2,.8,.2,1) forwards;
+
+  }
+
+  /* QURAN PAGE */
+
+  /* ================================
+    QURAN PAGE — PAGE 2
+    ================================ */
+
+  .quran-page{
+    min-height:100vh;
+    width:100%;
+    box-sizing:border-box;
+
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:90px 24px;
+
+    background:#3a080c;
+    color:#f7ead0;
+  }
+
+  .quran-content{
+    width:min(760px,92vw);
+
+    position:relative;
+    z-index:5;
+
+    text-align:center;
+  }
+
+
+  /* SMALL HEADING */
+
+  .quran-page .section-eyebrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+
+    margin-bottom:32px;
+
+    font-family:'Cinzel',serif;
+    font-size:10px;
+    letter-spacing:.42em;
+
+    color:var(--gold);
+  }
+
+  .quran-page .section-eyebrow::before,
+  .quran-page .section-eyebrow::after{
+    content:"";
+
+    width:45px;
+    height:1px;
+
+    background:var(--gold);
+    opacity:.7;
+  }
+
+
+  /* BOX */
+
+  .quran-content::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:60px;
+    bottom:-25px;
+
+    border:1px solid rgba(198,163,92,.45);
+
+    background:rgba(48,7,10,.25);
+
+    z-index:-1;
+  }
+
+
+  /* ARABIC */
+
+  .quran-arabic{
+    max-width:650px;
+
+    margin:0 auto;
+
+    padding:25px 35px 0;
+
+    font-family:serif;
+
+    font-size:clamp(25px,4.2vw,39px);
+    font-weight:400;
+    line-height:1.8;
+
+    color:#e5c477;
+
+    text-align:center;
+  }
+
+
+  /* DIVIDER */
+
+  .quran-divider{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:14px;
+
+    margin:26px auto;
+  }
+
+  .quran-divider span{
+    width:70px;
+    height:1px;
+
+    background:var(--gold);
+
+    opacity:.65;
+  }
+
+
+  /* TRANSLATION */
+
+  .quran-translation{
+    max-width:520px;
+
+    margin:0 auto;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(19px,3vw,24px);
+
+    line-height:1.65;
+
+    color:#ead9bd;
+  }
+
+
+  /* REFERENCE */
+
+  .quran-reference{
+    margin-top:25px;
+
+    padding-bottom:32px;
+
+    font-family:'Cinzel',serif;
+
+    font-size:9px;
+
+    letter-spacing:.3em;
+
+    color:var(--gold);
+  }
+
+
+  /* STARS */
+
+  .quran-stars{
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+
+    pointer-events:none;
+  }
+
+  .quran-stars span{
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:0 0 8px rgba(198,163,92,.7);
+
+    animation:quranTwinkle 3s ease-in-out infinite;
+  }
+
+  .quran-stars span:nth-child(1){
+    left:10%;
+    top:25%;
+  }
+
+  .quran-stars span:nth-child(2){
+    left:22%;
+    top:70%;
+    animation-delay:1s;
+  }
+
+  .quran-stars span:nth-child(3){
+    left:35%;
+    top:18%;
+    animation-delay:2s;
+  }
+
+  .quran-stars span:nth-child(4){
+    left:68%;
+    top:22%;
+    animation-delay:.7s;
+  }
+
+  .quran-stars span:nth-child(5){
+    left:84%;
+    top:70%;
+    animation-delay:1.7s;
+  }
+
+  .quran-stars span:nth-child(6){
+    left:92%;
+    top:40%;
+    animation-delay:2.3s;
+  }
+
+  @keyframes quranTwinkle{
+    0%,100%{
+      opacity:.2;
+      transform:scale(.7);
+    }
+
+    50%{
+      opacity:1;
+      transform:scale(1.3);
+    }
+  }
+
+
+  /* AIRPLANES */
+
+  .quran-plane{
+    position:absolute;
+
+    z-index:2;
+
+    color:var(--gold);
+
+    font-size:22px;
+
+    opacity:.65;
+
+    pointer-events:none;
+  }
+
+  .qplane1{
+    left:-60px;
+    top:25%;
+
+    animation:qplaneOne 15s linear infinite;
+  }
+
+  .qplane2{
+    right:-60px;
+    top:70%;
+
+    animation:qplaneTwo 18s linear infinite;
+  }
+
+  @keyframes qplaneOne{
+    0%{
+      transform:translateX(0);
+      opacity:0;
+    }
+
+    10%{
+      opacity:.65;
+    }
+
+    90%{
+      opacity:.65;
+    }
+
+    100%{
+      transform:translateX(115vw) translateY(-100px);
+      opacity:0;
+    }
+  }
+
+  @keyframes qplaneTwo{
+    0%{
+      transform:translateX(0) scaleX(-1);
+      opacity:0;
+    }
+
+    10%{
+      opacity:.65;
+    }
+
+    90%{
+      opacity:.65;
+    }
+
+    100%{
+      transform:translateX(-115vw) translateY(-100px) scaleX(-1);
+      opacity:0;
+    }
+  }
+
+  /* STARS */
+
+  .quran-stars{
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+
+    pointer-events:none;
+  }
+
+  .quran-stars span{
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:0 0 8px rgba(198,163,92,.7);
+
+    animation:quranTwinkle 3s ease-in-out infinite;
+  }
+
+  .quran-stars span:nth-child(1){
+    left:10%;
+    top:25%;
+  }
+
+  .quran-stars span:nth-child(2){
+    left:22%;
+    top:70%;
+    animation-delay:1s;
+  }
+
+  .quran-stars span:nth-child(3){
+    left:35%;
+    top:18%;
+    animation-delay:2s;
+  }
+
+  .quran-stars span:nth-child(4){
+    left:68%;
+    top:22%;
+    animation-delay:.7s;
+  }
+
+  .quran-stars span:nth-child(5){
+    left:84%;
+    top:70%;
+    animation-delay:1.7s;
+  }
+
+  .quran-stars span:nth-child(6){
+    left:92%;
+    top:40%;
+    animation-delay:2.3s;
+  }
+
+  @keyframes quranTwinkle{
+    0%,100%{
+      opacity:.2;
+      transform:scale(.7);
+    }
+
+    50%{
+      opacity:1;
+      transform:scale(1.3);
+    }
+  }
+
+
+  /* AIRPLANES */
+
+  .quran-plane{
+    position:absolute;
+
+    z-index:2;
+
+    color:var(--gold);
+
+    font-size:22px;
+
+    opacity:.65;
+
+    pointer-events:none;
+  }
+
+  .qplane1{
+    left:-60px;
+    top:25%;
+
+    animation:qplaneOne 15s linear infinite;
+  }
+
+  .qplane2{
+    right:-60px;
+    top:70%;
+
+    animation:qplaneTwo 18s linear infinite;
+  }
+
+  @keyframes qplaneOne{
+    0%{
+      transform:translateX(0);
+      opacity:0;
+    }
+
+    10%{
+      opacity:.65;
+    }
+
+    90%{
+      opacity:.65;
+    }
+
+    100%{
+      transform:translateX(115vw) translateY(-100px);
+      opacity:0;
+    }
+  }
+
+  @keyframes qplaneTwo{
+    0%{
+      transform:translateX(0) scaleX(-1);
+      opacity:0;
+    }
+
+    10%{
+      opacity:.65;
+    }
+
+    90%{
+      opacity:.65;
+    }
+
+    100%{
+      transform:translateX(-115vw) translateY(-100px) scaleX(-1);
+      opacity:0;
+    }
+  }
+
+  /* =========================================================
+    ENVELOPE BACK
+    ========================================================= */
+
+  .wedding-cover::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+      linear-gradient(
+        145deg,
+        #69151a,
+        #4a080d 55%,
+        #350609
+      );
+
+    border:
+      1px solid rgba(198,163,92,.75);
+
+    box-shadow:
+      inset 0 0 35px rgba(0,0,0,.25);
+
+    z-index:1;
+
+  }
+
+
+  /* =========================================================
+    ENVELOPE INNER BORDER
+    ========================================================= */
+
+  .wedding-cover::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:9px;
+
+    border:
+      1px solid rgba(198,163,92,.38);
+
+    z-index:20;
+
+    pointer-events:none;
+
+  }
+
+
+  /* =========================================================
+    INVITATION CARD INSIDE ENVELOPE
+    ========================================================= */
+
+  .wedding-cover > .cover-card{
+    position:absolute;
+
+    left:8%;
+    bottom:4%;
+
+    width:84%;
+    height:91%;
+
+    background:linear-gradient(
+      145deg,
+      #fff4dc,
+      #ead7b2
+    );
+
+    border:1px solid #b48a42;
+
+    box-shadow:
+      0 15px 30px rgba(0,0,0,.35);
+
+    z-index:3;
+
+    /* IMPORTANT */
+    transform:translateY(110%);
+    opacity:0;
+
+    transition:
+      transform 1.25s cubic-bezier(.2,.8,.2,1),
+      opacity .5s ease;
+
+    pointer-events:none;
+  }
+
+  /* CARD INNER BORDER */
+
+  .cover-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border:
+      1px solid rgba(163,120,55,.5);
+
+  }
+
+
+  /* =========================================================
+    CARD CONTENT
+    ========================================================= */
+
+  .cover-card-content{
+
+    position:absolute;
+
+    inset:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+  }
+
+
+  /* ARABIC */
+
+  .cover-card-arabic{
+
+    direction:rtl;
+
+    font-family:serif;
+
+    font-size:clamp(18px,4vw,28px);
+
+    color:#7d5924;
+
+    margin-bottom:10px;
+
+  }
+
+
+  /* SMALL LABEL */
+
+  .cover-card-small{
+
+    font-family:'Cinzel',serif;
+
+    font-size:8px;
+
+    letter-spacing:.32em;
+
+    color:#806027;
+
+    margin-bottom:15px;
+
+  }
+
+
+  /* CARD NAMES */
+
+  .cover-card-names{
+
+    font-family:'Italiana',serif;
+
+    font-size:clamp(28px,7vw,48px);
+
+    line-height:.95;
+
+    color:#5c411c;
+
+  }
+
+
+  .cover-card-names span{
+
+    display:block;
+
+    font-family:'Playfair Display',serif;
+
+    font-style:italic;
+
+    font-size:.6em;
+
+    color:#a27530;
+
+    margin:7px 0;
+
+  }
+
+
+  /* CARD DATE */
+
+  .cover-card-date{
+
+    font-family:'Cinzel',serif;
+
+    font-size:8px;
+
+    letter-spacing:.22em;
+
+    color:#806027;
+
+    margin-top:18px;
+
+  }
+
+
+  /* CARD VENUE */
+
+  .cover-card-venue{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-style:italic;
+
+    font-size:14px;
+
+    color:#806b48;
+
+    margin-top:7px;
+
+  }
+
+
+  /* =========================================================
+    FRONT LEFT FLAP
+    ========================================================= */
+
+  .cover-left-flap{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:72%;
+
+    background:
+      linear-gradient(
+        135deg,
+        #68151a,
+        #47090d
+      );
+
+    clip-path:
+      polygon(
+        0 0,
+        50% 50%,
+        0 100%
+      );
+
+    transform-origin:left center;
+
+    transition:
+      transform 1s cubic-bezier(.7,0,.2,1);
+
+    z-index:7;
+
+  }
+
+
+  /* =========================================================
+    FRONT RIGHT FLAP
+    ========================================================= */
+
+  .cover-right-flap{
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:100%;
+    height:72%;
+
+    background:
+      linear-gradient(
+        225deg,
+        #68151a,
+        #47090d
+      );
+
+    clip-path:
+      polygon(
+        100% 0,
+        50% 50%,
+        100% 100%
+      );
+
+    transform-origin:right center;
+
+    transition:
+      transform 1s cubic-bezier(.7,0,.2,1);
+
+    z-index:7;
+
+  }
+
+
+  /* =========================================================
+    TOP ENVELOPE FLAP
+    ========================================================= */
+
+  .cover-top-flap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:64%;
+
+    background:
+      linear-gradient(
+        145deg,
+        #71171c,
+        #4d090d 55%,
+        #621217
+      );
+
+    clip-path:
+      polygon(
+        0 0,
+        100% 0,
+        50% 100%
+      );
+
+    transform-origin:top center;
+
+    transition:
+      transform 1.05s cubic-bezier(.7,0,.2,1);
+
+    z-index:9;
+
+  }
+
+
+  /* =========================================================
+    GOLD SEAL
+    ========================================================= */
+
+  .envelope-seal{
+
+    position:absolute;
+
+    left:50%;
+    top:51%;
+
+    width:62px;
+    height:62px;
+
+    transform:
+      translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+      radial-gradient(
+        circle at 35% 30%,
+        #f4d98b,
+        #c49a48 55%,
+        #80591f
+      );
+
+    border:
+      2px solid #dfbf6c;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#674616;
+
+    font-size:20px;
+
+    z-index:15;
+
+    box-shadow:
+      0 5px 18px rgba(0,0,0,.5),
+      inset 0 2px 5px rgba(255,255,255,.35);
+
+    transition:
+      opacity .5s ease,
+      transform .6s ease;
+
+  }
+  /* =========================================
+    FRONT ENVELOPE TEXT
+  ========================================= */
+
+  .envelope-front-text{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    color:#d8b76b;
+
+    z-index:12;
+
+    pointer-events:none;
+
+  }
+
+
+  /* FATHIMA & BASIL */
+
+  .front-names{
+
+    font-family:'Cinzel',serif;
+
+    font-size:clamp(14px,3vw,19px);
+
+    letter-spacing:.32em;
+
+    font-weight:400;
+
+    white-space:nowrap;
+
+  }
+
+
+  .front-names span{
+
+    font-family:'Playfair Display',serif;
+
+    font-style:italic;
+
+    font-size:1.2em;
+
+    margin:0 7px;
+
+    color:#c6a35c;
+
+  }
+
+
+  /* GOLD LINE */
+
+  .front-line{
+
+    width:55px;
+
+    height:1px;
+
+    background:#c6a35c;
+
+    margin:12px auto;
+
+    opacity:.8;
+
+  }
+
+
+  /* NIKKAH INVITATION */
+
+  .front-title{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-style:italic;
+
+    font-size:14px;
+
+    letter-spacing:.08em;
+
+    color:#c6a35c;
+
+    margin-bottom:5px;
+
+  }
+
+
+  /* DATE */
+
+  .front-date{
+
+    font-family:'Cinzel',serif;
+
+    font-size:8px;
+
+    letter-spacing:.22em;
+
+    color:#b99750;
+
+  }
+
+
+  /* =========================================================
+    TEXT ON FRONT OF ENVELOPE
+    ========================================================= */
+
+  .wedding-cover > .cover-arabic,
+  .wedding-cover > .cover-small,
+  .wedding-cover > .cover-names,
+  .wedding-cover > .cover-date,
+  .wedding-cover > .cover-venue{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:
+      translateX(-50%);
+
+    z-index:12;
+
+  }
+
+
+  /* Hide old text — new card has the text */
+
+  .wedding-cover > .cover-arabic,
+  .wedding-cover > .cover-small,
+  .wedding-cover > .cover-names,
+  .wedding-cover > .cover-date,
+  .wedding-cover > .cover-venue{
+
+    display:none;
+
+  }
+
+
+  /* =========================================================
+    TAP TO OPEN
+    ========================================================= */
+
+  .cover-open{
+    position:relative;
+    top:auto;
+    left:auto;
+
+    transform:none;
+
+    width:max-content;
+
+    margin-top:24px;
+
+    font-family:'Cinzel', serif;
+    font-size:8px;
+    letter-spacing:.28em;
+
+    color:#c6a35c;
+    opacity:.75;
+
+    animation:openPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes openPulse{
+
+    0%,100%{
+      opacity:.45;
+    }
+
+    50%{
+      opacity:1;
+    }
+
+  }
+
+
+  /* =========================================================
+    ENVELOPE ENTRANCE
+    ========================================================= */
+
+  @keyframes envelopeAppear{
+
+    from{
+
+      opacity:0;
+
+      transform:
+        translateY(35px)
+        scale(.9);
+
+    }
+    
+
+    to{
+
+      opacity:1;
+
+      transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+  }
+
+
+  /* =========================================================
+    WHEN USER TAPS
+    ========================================================= */
+
+
+  /* TOP FLAP OPENS */
+
+  #landing.opening .cover-top-flap{
+
+    transform:
+      rotateX(180deg);
+
+  }
+
+
+  /* SIDE FLAPS OPEN */
+
+  #landing.opening .cover-left-flap{
+
+    transform:
+      rotateY(-55deg);
+
+  }
+
+
+  #landing.opening .cover-right-flap{
+
+    transform:
+      rotateY(55deg);
+
+  }
+
+  #landing.opening .envelope-front-text{
+    opacity:1;
+  }
+
+
+  /* CARD SLIDES OUT */
+
+  #landing.opening .cover-card{
+
+    transform:
+      translateY(-12%);
+
+  }
+
+
+  /* SEAL DISAPPEARS */
+
+  #landing.opening .envelope-seal{
+
+    animation:
+      sealOut .7s ease forwards;
+
+  }
+
+
+  @keyframes sealOut{
+
+    0%{
+
+      opacity:1;
+
+      transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    }
+
+    45%{
+
+      opacity:1;
+
+      transform:
+        translate(-50%,-50%)
+        scale(1.3);
+
+    }
+
+    100%{
+
+      opacity:0;
+
+      transform:
+        translate(-50%,-50%)
+        scale(1.6);
+
+    }
+
+  }
+
+
+  /* TAP TEXT DISAPPEARS */
+
+  #landing.opening .cover-open{
+
+    opacity:0;
+
+  }
+
+
+  /* =========================================================
+    MOBILE
+    ========================================================= */
+
+  @media(max-width:600px){
+
+    .wedding-cover{
+
+      width:88vw;
+
+    }
+
+    .envelope-seal{
+
+      width:52px;
+      height:52px;
+
+      font-size:17px;
+
+    }
+
+    .cover-card-arabic{
+
+      font-size:18px;
+
+    }
+
+    .cover-card-names{
+
+      font-size:28px;
+
+    }
+
+    .cover-card-date{
+
+      font-size:7px;
+
+    }
+
+    .cover-card-venue{
+
+      font-size:12px;
+
+    }
+
+  }
+
+
+  /* MAIN INVITATION */
+
+  #main{
+    display:none;
+  }
+
+  #main.show{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .opened-hero{
+    order:1;
+  }
+
+  .quran-page{
+    order:2;
+  }
+
+  .details{
+    order:3;
+  }
+
+  .couple-section{
+    order:4;
+  }
+
+  .rsvp{
+    order:5;
+  }
+
+  .wishes{
+    order:6;
+  }
+
+  .contact{
+    order:7;
+  }
+
+  .footer{
+    order:8;
+  }
+  /* STICKY BADGE */
+  #mono-badge{position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:900;width:44px;height:44px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .4s;background:rgba(247,242,231,.95);border-radius:50%;border:1px solid rgba(66,92,57,.35);backdrop-filter:blur(8px);box-shadow:0 2px 12px rgba(0,0,0,.25)}
+  #mono-badge.show{opacity:1}
+  #mono-badge svg{width:34px;height:34px}
+
+  /* SECTION COMMONS */
+  .section-eyebrow{font-family:'Cinzel',serif;letter-spacing:.42em;font-size:9.5px;color:var(--gold);margin-bottom:14px}
+  .section-title{font-family:'Italiana',serif;font-size:clamp(36px,9vw,54px);color:var(--ink);margin-bottom:22px;line-height:1.1}
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:44px 0 10px}
+.divider span{flex:1;height:1px;background:var(--rule);max-width:76px}
+.divider .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* INVITE */
+.invite{background:var(--bg);padding:88px 28px 66px;position:relative;text-align:center;border-bottom:1px solid var(--rule)}
+.invite::before{content:"";position:absolute;top:40px;left:50%;transform:translateX(-50%);width:38px;height:38px;border-top:1px solid var(--gold);border-left:1px solid var(--gold);opacity:.35}
+.invite-personal{font-family:'Italiana',serif;font-style:italic;color:var(--gold);font-size:21px;margin-bottom:28px}
+.invite-personal:empty{display:none}
+.invite-names{
+  font-family:'Italiana',serif;
+  font-size:clamp(58px,15vw,100px);
+  line-height:.9;
+  color:var(--ink);
+  margin-bottom:40px;
+  overflow-wrap:break-word;
+}
+
+.invite-names .weds{
+  display:block;
+  color:var(--gold);
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:.42em;
+  margin:12px 0;
+}
+.invite-body{max-width:44ch;margin:0 auto}
+.invite-body p{font-size:19px;font-weight:600;line-height:1.85;color:var(--ink);margin-bottom:14px;font-style:italic}
+.invite-body .accent{color:var(--ink);font-weight:600}
+
+/* BIBLE VERSE */
+.verse-block{background:rgba(66,92,57,.06);border-left:2px solid var(--green);padding:18px 20px;margin:24px auto;max-width:440px;text-align:left;border-radius:0 6px 6px 0}
+.verse-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--ink);line-height:1.85;margin-bottom:8px}
+.verse-ref{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.3em;color:var(--gold);opacity:.85}
+
+/* FAMILIES */
+.families{background:var(--bg);padding:45px 24px 45px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
+.family-grid{display:grid;grid-template-columns:1fr;gap:14px;max-width:480px;margin:0 auto;position:relative}
+@media(min-width:640px){.family-grid{grid-template-columns:1fr 1fr;max-width:720px}}
+.family-card{background:#fff;border:1px solid var(--cardborder);border-radius:16px;box-shadow:0 2px 16px rgba(0,0,0,.06);padding:28px 22px;text-align:left}
+.family-card-head{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px dashed rgba(163,129,47,.25)}
+.family-photo-wrap{flex-shrink:0;padding:3px;background:linear-gradient(135deg,var(--green),var(--gold),var(--green2));border-radius:50%}
+.family-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;background:linear-gradient(145deg,var(--bg3) 0%,var(--bg) 100%);display:flex;align-items:center;justify-content:center;font-family:'Italiana',serif;font-size:28px;color:var(--green);border:3px solid var(--bg)}
+.family-card-name{font-family:'Italiana',serif;font-size:22px;color:var(--ink);line-height:1.15;word-break:break-word}
+.family-card-role{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.32em;color:var(--gold);margin-top:4px;opacity:.85}
+.family-detail{font-size:16.5px;color:var(--muted);font-style:italic;line-height:1.85;font-weight:600}
+.family-detail strong{font-family:'Cinzel',serif;font-style:normal;font-size:8px;letter-spacing:.28em;color:var(--gold);display:block;margin:12px 0 4px;font-weight:500;opacity:.9}
+.family-sep{display:flex;align-items:center;gap:10px;margin:18px 0;opacity:.3}
+.family-sep span{flex:1;height:1px;background:var(--gold)}
+.family-sep i{font-size:12px;color:var(--gold);font-style:normal}
+
+/* EVENTS */
+.details{background:var(--bg2);padding:76px 24px 66px;border-bottom:1px solid var(--rule)}
+.details-lede{text-align:center;color:var(--muted);font-size:19px;font-weight:600;max-width:38ch;margin:0 auto 36px;line-height:1.7;font-style:italic}
+.event-card{background:#fff;border:1px solid var(--cardborder);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:22px 18px 18px;margin-bottom:14px;transition:all .4s;max-width:520px;margin-left:auto;margin-right:auto}
+.event-card:hover{border-color:rgba(163,129,47,.4)}
+.event-head{display:flex;align-items:center;gap:12px;padding-bottom:13px;margin-bottom:13px;border-bottom:1px dashed rgba(163,129,47,.25)}
+.event-num{width:30px;height:30px;border-radius:50%;background:var(--green);color:#f7f2e7;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:10px;font-weight:500;flex-shrink:0}
+.event-title{font-family:'Cinzel',serif;letter-spacing:.26em;font-size:10.5px;color:var(--ink);font-weight:500}
+.event-row{display:flex;gap:12px;align-items:flex-start;padding:9px 0}
+.event-row:last-of-type{border-bottom:none}
+.row-icon{width:34px;height:34px;border-radius:50%;background:rgba(66,92,57,.08);border:1px solid rgba(66,92,57,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green)}
+.row-icon svg{width:15px;height:15px}
+.row-body{flex:1;min-width:0}
+.row-label{font-family:'Cinzel',serif;letter-spacing:.25em;font-size:8.5px;color:var(--muted);margin-bottom:2px}
+.row-value{font-family:'Italiana',serif;font-size:18px;color:var(--ink);line-height:1.25}
+.row-sub{font-size:16.5px;font-weight:600;color:var(--muted);font-style:italic;margin-top:1px}
+.event-actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.btn{flex:1;min-width:110px;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px;border-radius:3px;font-family:'Cinzel',serif;letter-spacing:.18em;font-size:9.5px;cursor:pointer;border:none;transition:all .2s;font-weight:500}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--green);color:#f7f2e7}
+.btn-primary:hover{background:var(--green2)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(163,129,47,.3)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn svg{width:11px;height:11px}
+
+/* RSVP */
+.rsvp{background:var(--bg);padding:66px 24px;text-align:center;border-bottom:1px solid var(--rule)}
+.rsvp-copy{color:var(--muted);font-size:19px;font-weight:600;max-width:36ch;margin:0 auto 14px;line-height:1.65;font-style:italic}
+.rsvp-greet{font-family:'Italiana',serif;font-style:italic;color:var(--gold);font-size:18px;margin-bottom:22px}
+.rsvp-greet:empty{display:none}
+.rsvp-form{background:#fff;border:1px solid var(--cardborder);border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:26px 20px;text-align:left;max-width:500px;margin:0 auto 18px}
+.rsvp-form h3{font-family:'Italiana',serif;font-size:25px;color:var(--ink);margin-bottom:5px;text-align:center}
+.rsvp-form .note{text-align:center;font-size:16.5px;color:var(--muted);margin-bottom:22px;font-style:italic}
+.field{margin-bottom:18px}
+.field-label{font-family:'Cinzel',serif;letter-spacing:.2em;font-size:9.5px;color:var(--ink);margin-bottom:9px;font-weight:500;display:block}
+.field-label .num{display:inline-block;width:17px;height:17px;border-radius:50%;background:var(--green);color:#fff;text-align:center;line-height:17px;font-size:8.5px;margin-right:6px}
+.input,.textarea{width:100%;padding:11px 13px;border:1px solid var(--cardborder);border-radius:6px;background:#fff;font-family:'Cormorant Garamond',serif;font-size:17.5px;color:var(--ink);outline:none;transition:border-color .2s}
+.input::placeholder,.textarea::placeholder{color:var(--muted)}
+.input:focus,.textarea:focus{border-color:var(--gold)}
+.field-label .req{color:#c0392b;margin-left:3px}
+.input.input-error{border-color:#c0392b;background:#fdf3f2}
+.event-pick{border:1px solid var(--cardborder);border-radius:6px;background:rgba(255,255,255,.03);overflow:hidden;transition:all .2s;margin-bottom:7px}
+.event-pick.active{border-color:var(--green);background:rgba(66,92,57,.08)}
+.chk{display:flex;align-items:center;gap:10px;cursor:pointer;padding:11px 13px;font-family:'Cormorant Garamond',serif;font-size:17.5px;color:var(--ink)}
+.event-pick .chk{border:none;background:transparent;border-radius:0;margin-bottom:0}
+.chk input{appearance:none;-webkit-appearance:none;width:17px;height:17px;border:1.5px solid var(--muted);border-radius:4px;flex-shrink:0;cursor:pointer;position:relative;background:transparent}
+.chk input:checked{background:var(--green);border-color:var(--green)}
+.chk input:checked::after{content:"✓";position:absolute;inset:0;color:#fff;font-size:11px;text-align:center;line-height:15px}
+.chk-title{font-weight:500;flex:1}
+.chk-sub{font-size:14.5px;color:var(--muted);display:block;margin-top:1px;font-style:italic}
+.ev-count{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 13px 11px;border-top:1px dashed rgba(163,129,47,.25);background:rgba(255,255,255,.03)}
+.ev-count-lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.16em;color:var(--gold)}
+.mini-counter{display:flex;align-items:center;gap:9px}
+.mini-counter button{width:30px;height:30px;border-radius:50%;border:1px solid var(--green);background:transparent;color:var(--ink);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mini-counter button:active{background:var(--green);color:#fff}
+.mini-count{font-family:'Italiana',serif;font-size:19px;color:var(--ink);min-width:26px;text-align:center}
+.rsvp-attend-toggle{display:flex;gap:7px;margin-bottom:5px}
+.toggle-btn{flex:1;padding:13px;border:1px solid rgba(163,129,47,.25);background:transparent;border-radius:4px;font-family:'Cinzel',serif;letter-spacing:.18em;font-size:9.5px;color:var(--ink);cursor:pointer;transition:all .2s;font-weight:500}
+.toggle-btn.active{background:var(--green);color:#f7f2e7;border-color:var(--green)}
+.submit-btn{width:100%;padding:15px;background:var(--green);color:#f7f2e7;border:none;border-radius:4px;font-family:'Cinzel',serif;letter-spacing:.28em;font-size:10.5px;cursor:pointer;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;font-weight:500}
+.submit-btn:hover{background:var(--green2)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+.submit-btn svg{width:13px;height:13px}
+.submit-btn.confirmed,.submit-btn.confirmed:disabled{background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 52%,var(--gold) 100%);color:#fff8ea;opacity:1;cursor:default;box-shadow:0 8px 24px rgba(163,129,47,.45);animation:goldPop .6s cubic-bezier(.34,1.56,.64,1)}
+.submit-btn.confirmed:hover{background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 52%,var(--gold) 100%)}
+@keyframes goldPop{0%{transform:scale(.96)}45%{transform:scale(1.05)}100%{transform:scale(1)}}
+.success{display:none;text-align:center;padding:32px 20px;background:var(--card);border-radius:10px;max-width:500px;margin:0 auto;border:1px solid var(--cardborder)}
+.success.show{display:block}
+.success .check{width:58px;height:58px;border-radius:50%;background:var(--green);color:#f7f2e7;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px}
+.success h3{font-family:'Italiana',serif;font-size:27px;color:var(--ink);margin-bottom:7px}
+.success p{color:var(--muted);font-size:15px;font-style:italic}
+.rsvp-existing{display:none;background:var(--card);border-radius:10px;padding:26px 20px;text-align:left;max-width:500px;margin:0 auto;border:1px solid var(--cardborder)}
+.rsvp-existing.show{display:block}
+.rsvp-existing .ex-head{text-align:center;margin-bottom:20px;padding-bottom:16px;border-bottom:1px dashed rgba(163,129,47,.25)}
+.rsvp-existing .ex-icon{width:52px;height:52px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 12px}
+.rsvp-existing h3{font-family:'Italiana',serif;font-size:24px;color:var(--ink);margin-bottom:4px}
+.rsvp-existing .ex-sub{font-size:14px;color:var(--muted);font-style:italic}
+.ex-row{padding:10px 0;border-bottom:1px dashed rgba(163,129,47,.15)}
+.ex-row:last-child{border-bottom:none}
+.ex-lbl{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.25em;color:var(--gold);margin-bottom:4px}
+.ex-val{font-size:17.5px;color:var(--ink);font-style:italic}
+.ex-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.ex-tag{background:rgba(66,92,57,.12);border:1px solid rgba(66,92,57,.3);border-radius:5px;padding:4px 10px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;color:var(--ink)}
+.ex-edit-btn{width:100%;margin-top:16px;padding:13px;background:transparent;border:1px solid rgba(163,129,47,.3);border-radius:4px;font-family:'Cinzel',serif;letter-spacing:.22em;font-size:9.5px;color:var(--gold);cursor:pointer;transition:all .2s}
+
+/* WISHES WALL */
+.wishes{background:var(--bg2);padding:76px 24px 66px;border-bottom:1px solid var(--rule)}
+.wish-form{background:var(--card);border:1px solid var(--cardborder);border-radius:10px;padding:22px 18px;max-width:500px;margin:0 auto 28px}
+.wish-form textarea{width:100%;padding:11px 13px;border:1px solid var(--cardborder);border-radius:6px;background:#fff;font-family:'Cormorant Garamond',serif;font-size:17.5px;color:var(--ink);outline:none;min-height:80px;resize:none;transition:border-color .2s}
+.wish-form textarea:focus{border-color:var(--gold)}
+.wish-form textarea::placeholder{color:var(--muted)}
+.wish-form input{width:100%;padding:11px 13px;border:1px solid var(--cardborder);border-radius:6px;background:#fff;font-family:'Cormorant Garamond',serif;font-size:17.5px;color:var(--ink);outline:none;margin-bottom:10px;transition:border-color .2s}
+.wish-form input:focus{border-color:var(--gold)}
+.wish-form input::placeholder{color:var(--muted)}
+.wfl-submit{width:100%;padding:13px;background:var(--green);color:#f7f2e7;border:none;border-radius:4px;font-family:'Cinzel',serif;letter-spacing:.25em;font-size:10px;cursor:pointer;margin-top:10px;transition:background .2s}
+.wfl-submit:hover{background:var(--green2)}
+.wfl-submit:disabled{opacity:.5;cursor:not-allowed}
+#wgrid{display:grid;grid-template-columns:1fr;gap:12px;max-width:500px;margin:0 auto}
+.wish-card{background:#fff;border:1px solid var(--cardborder);border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,.05);padding:18px 16px}
+.wish-card-name{font-family:'Italiana',serif;font-size:20px;color:var(--gold);margin-bottom:4px}
+.wish-card-msg{font-size:17px;font-weight:600;color:var(--muted);font-style:italic;line-height:1.7}
+.wish-card-time{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.22em;color:var(--muted);opacity:.55;margin-top:8px}
+#loadmore-wrap{text-align:center;margin-top:22px;display:none}
+#loadMoreBtn{padding:12px 32px;background:transparent;border:1px solid rgba(163,129,47,.3);border-radius:4px;font-family:'Cinzel',serif;letter-spacing:.22em;font-size:9.5px;color:var(--gold);cursor:pointer;transition:all .2s}
+
+
+/* CONTACT — MAROON RSVP STYLE */
+
+.contact{
+  background:#3a080c;
+  padding:75px 24px 65px;
+  text-align:center;
+  color:#f7ead0;
+  position:relative;
+  overflow:hidden;
+}
+
+.contact .section-eyebrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:32px;
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:.42em;
+  color:#c6a35c;
+}
+
+.contact .section-eyebrow::before,
+.contact .section-eyebrow::after{
+  content:"";
+  width:55px;
+  height:1px;
+  background:#c6a35c;
+  opacity:.8;
+}
+
+.contact h3{
+  font-family:serif;
+  font-size:30px;
+  font-weight:400;
+  color:#e5c477;
+  margin-bottom:10px;
+}
+
+.contact > p{
+  color:#ead9bd;
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  font-style:italic;
+  margin:0 auto 32px;
+}
+
+/* TWO LARGE BOXES */
+
+.contact-grid{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  width:min(100%,900px);
+  margin:0 auto;
+}
+
+/* EACH CONTACT BOX */
+
+.cbtn{
+  width:100%;
+  min-height:145px;
+  padding:30px 38px;
+  border:1px solid rgba(198,163,92,.42);
+  border-radius:0;
+  background:rgba(48,7,10,.35);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  text-align:left;
+  text-decoration:none;
+
+  transition:.3s ease;
+}
+
+.cbtn:hover{
+  border-color:rgba(198,163,92,.75);
+  background:rgba(48,7,10,.55);
+}
+
+/* NAME + ROLE */
+
+.cbtn > span:first-child{
+  display:block;
+  text-align:left;
+}
+
+.contact-person{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;
+  font-style:italic;
+  font-weight:400;
+  display:block;
+  color:#f3e6cf;
+  margin:0 0 7px 0;
+  line-height:1;
+}
+
+/* ROLE */
+
+.contact-role{
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:.32em;
+  color:#c6a35c;
+  display:block;
+  line-height:1.4;
+}
+
+/* ICON AREA */
+
+.contact-actions{
+  display:flex;
+  gap:12px;
+  flex-shrink:0;
+}
+
+/* PHONE + WHATSAPP BOX */
+
+.contact-action{
+  width:72px;
+  height:72px;
+
+  border:1px solid rgba(198,163,92,.38);
+  background:transparent;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#c6a35c;
+  text-decoration:none;
+
+  transition:.25s ease;
+}
+
+.contact-action:hover{
+  background:rgba(198,163,92,.12);
+  border-color:#c6a35c;
+  color:#e5c477;
+  transform:translateY(-2px);
+}
+
+.contact-action svg{
+  width:27px;
+  height:27px;
+  stroke:currentColor;
+}
+
+/* BILAL & BADHUSHA */
+
+.contact-signoff{
+  margin-top:55px !important;
+  margin-bottom:0 !important;
+
+  font-family:'Italiana',serif !important;
+  font-size:24px !important;
+  font-style:italic !important;
+
+  color:#c6a35c !important;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .contact{
+    padding:65px 18px 55px;
+  }
+
+  .contact .section-eyebrow{
+    font-size:8px;
+    letter-spacing:.30em;
+    gap:10px;
+  }
+
+  .contact .section-eyebrow::before,
+  .contact .section-eyebrow::after{
+    width:35px;
+  }
+
+  .cbtn{
+    min-height:125px;
+    padding:24px 20px;
+  }
+
+  .cbtn > span:first-child > span:last-child{
+    font-size:8px;
+    letter-spacing:.24em;
+  }
+
+  .contact-person{
+    font-size:27px;
+  }
+
+  .contact-actions{
+    gap:7px;
+  }
+
+  .contact-action{
+    width:52px;
+    height:52px;
+  }
+
+  .contact-action svg{
+    width:21px;
+    height:21px;
+  }
+
+  .contact-signoff{
+    font-size:21px !important;
+  }
+}
+/* FOOTER */
+.footer{background:#22261a;padding:30px 24px 26px;text-align:center;color:#f7f2e7;border-top:1px solid rgba(163,129,47,.2)}
+.footer .couple-initials{font-family:'Cinzel',serif;letter-spacing:.55em;font-size:11.5px;color:var(--gold2);margin-bottom:16px}
+.footer .tagline{font-family:'Italiana',serif;font-style:italic;font-size:16px;color:#f7f2e7;margin-bottom:14px}
+.footer .brand{font-family:'Cinzel',serif;letter-spacing:.38em;font-size:8.5px;color:rgba(198,163,92,.5)}
+.foot-social{display:flex;justify-content:center;align-items:center;gap:.85rem;margin-top:1.8rem;flex-wrap:wrap}
+.foot-social a{width:42px;height:42px;border-radius:50%;border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold2);text-decoration:none;transition:background .3s,color .3s,transform .25s,border-color .3s}
+.foot-social a:hover{background:var(--gold2);color:#22261a;border-color:var(--gold2);transform:translateY(-3px)}
+.foot-social svg{width:18px;height:18px}
+
+/* UTILS */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+.reveal.on{opacity:1;transform:none}
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#f7f2e7;padding:11px 20px;border-radius:999px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.2em;opacity:0;transition:all .3s;z-index:9999;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#bgmBtn{position:fixed;bottom:22px;right:18px;z-index:9000;width:46px;height:46px;border-radius:50%;background:rgba(247,242,231,.93);border:1.5px solid rgba(66,92,57,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(0,0,0,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;padding:0}
+#bgmBtn .bgm-ring{position:absolute;inset:-4px;border-radius:50%;border:2px dashed rgba(66,92,57,.6);animation:bgmSpin 4s linear infinite;pointer-events:none;display:none}
+#bgmBtn.admin-mode .bgm-ring{display:block}
+@keyframes bgmSpin{to{transform:rotate(360deg)}}
+
+/* IMAGE UPLOAD SYSTEM */
+.img-slot-add{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;z-index:10;background:rgba(0,0,0,.25)}
+.img-slot-add .plus{width:44px;height:44px;border-radius:50%;background:rgba(163,129,47,.92);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;font-weight:300;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.img-slot-add span{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.22em;color:rgba(255,255,255,.9)}
+.avatar-wrap{position:relative;cursor:pointer}
+.avatar-upload-btn{position:absolute;bottom:-2px;right:-2px;width:22px;height:22px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;font-weight:bold;box-shadow:0 1px 6px rgba(0,0,0,.4);z-index:5;line-height:1}
+
+@media(min-width:640px){
+  .invite,.families,.details,.rsvp,.contact,.wishes{padding-left:44px;padding-right:44px}
+}
+
+/* OPENED INVITATION PAGE */
+
+.opened-hero{
+  min-height:100vh;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(120,20,25,.3),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #3b0307 0%,
+      #250204 65%,
+      #120102 100%
+    );
+
+  color:#f4dfb1;
+}
+
+
+/* TOP LEFT */
+
+.hero-monogram{
+  position:absolute;
+  top:22px;
+  left:24px;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  font-style:italic;
+
+  color:#d7b46a;
+}
+
+
+/* TOP RIGHT */
+
+.hero-year{
+  position:absolute;
+  top:25px;
+  right:28px;
+
+  font-family:'Cinzel',serif;
+  font-size:9px;
+
+  color:#b99552;
+  letter-spacing:.22em;
+}
+
+
+/* MAIN CONTENT */
+
+.hero-center{
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  width:min(90%,650px);
+
+  text-align:center;
+}
+
+
+/* ARABIC */
+
+.hero-arabic{
+  direction:rtl;
+
+  font-family:serif;
+
+  font-size:clamp(27px,5vw,43px);
+
+  color:#e5c477;
+
+  line-height:1.35;
+
+  margin-bottom:4px;
+}
+
+
+/* ENGLISH QUOTE */
+
+.hero-translation{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:16px;
+
+  font-style:italic;
+
+  color:#e3cda5;
+
+  margin-bottom:34px;
+}
+
+
+/* GOLD LINE */
+
+.hero-line{
+  width:195px;
+
+  height:1px;
+
+  background:#bd9448;
+
+  margin:0 auto 30px;
+}
+
+
+/* NAMES */
+
+.hero-name{
+  font-family:'Italiana',serif;
+
+  font-size:clamp(75px,13vw,130px);
+
+  line-height:.85;
+
+  color:#f2e2c2;
+
+  letter-spacing:-.02em;
+}
+
+
+/* WEDS */
+
+.hero-weds{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(29px,5vw,46px);
+
+  font-style:italic;
+
+  color:#c49a4c;
+
+  margin:14px 0;
+
+  line-height:1;
+}
+
+
+/* DECORATION */
+
+.hero-symbols{
+  margin-top:32px;
+
+  font-size:18px;
+
+  color:#c49a4c;
+
+  letter-spacing:.5em;
+}
+
+
+/* DATE */
+
+.hero-date{
+  margin-top:20px;
+
+  font-family:'Cinzel',serif;
+
+  font-size:clamp(10px,2vw,13px);
+
+  letter-spacing:.25em;
+
+  color:#ead9b4;
+}
+
+
+/* SCROLL */
+
+.hero-scroll{
+  position:absolute;
+
+  right:38px;
+  bottom:125px;
+
+  font-family:'Cinzel',serif;
+
+  font-size:9px;
+
+  letter-spacing:.4em;
+
+  color:#b99552;
+}
+
+
+/* STARS */
+
+.hero-star{
+  position:absolute;
+
+  color:#bd9448;
+
+  opacity:.65;
+
+  animation:heroTwinkle 3s ease-in-out infinite;
+}
+
+.star1{
+  top:18%;
+  left:14%;
+}
+
+.star2{
+  top:28%;
+  left:24%;
+}
+
+.star3{
+  top:47%;
+  left:9%;
+}
+
+.star4{
+  top:32%;
+  right:17%;
+}
+
+.star5{
+  top:52%;
+  right:9%;
+}
+
+.star6{
+  top:73%;
+  left:31%;
+}
+
+
+/* DECORATIVE FLIGHTS */
+
+/* =========================================
+   MOVING AIRPLANES — FIRST HERO PAGE
+   ========================================= */
+.hero-flight{
+  position:absolute;
+  font-size:10px;
+  color:#9f7839;
+  opacity:.55;
+  white-space:nowrap;
+  pointer-events:none;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.flight1{
+  top:24%;
+  left:8%;
+  animation:flightMove1 6s ease-in-out infinite;
+}
+
+.flight2{
+  top:39%;
+  right:7%;
+  animation:flightMove2 6s ease-in-out infinite;
+}
+
+@keyframes flightMove1{
+  0%,100%{
+    transform:translateX(0);
+    opacity:.25;
+  }
+
+  50%{
+    transform:translateX(35px);
+    opacity:.65;
+  }
+}
+
+@keyframes flightMove2{
+  0%,100%{
+    transform:translateX(0);
+    opacity:.25;
+  }
+
+  50%{
+    transform:translateX(-35px);
+    opacity:.65;
+  }
+}
+
+/* ANIMATION */
+
+@keyframes heroTwinkle{
+  0%,100%{
+    opacity:.25;
+    transform:scale(.8);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.25);
+  }
+}
+
+/* Different timing for each star */
+.hero-star.star1{animation-delay:0s;}
+.hero-star.star2{animation-delay:1.1s;}
+.hero-star.star3{animation-delay:2.2s;}
+.hero-star.star4{animation-delay:.6s;}
+.hero-star.star5{animation-delay:1.8s;}
+.hero-star.star6{animation-delay:2.8s;}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .hero-monogram{
+    left:18px;
+    top:18px;
+    font-size:17px;
+  }
+
+  .hero-year{
+    right:18px;
+    top:20px;
+    font-size:7px;
+  }
+
+  .hero-center{
+    width:92%;
+  }
+
+  .hero-arabic{
+    font-size:27px;
+  }
+
+  .hero-translation{
+    font-size:13px;
+  }
+
+  .hero-name{
+    font-size:78px;
+  }
+
+  .hero-weds{
+    font-size:32px;
+  }
+
+  .hero-date{
+    font-size:9px;
+  }
+
+  .hero-scroll{
+    right:15px;
+    bottom:80px;
+    font-size:7px;
+  }
+
+
+}
+/* =========================================================
+   FATHIMA & BASIL — FULL BURGUNDY / GOLD THEME
+   ========================================================= */
+
+:root {
+  --bg: #2b0508 !important;
+  --bg2: #3a080c !important;
+
+  --ink: #f7ead0 !important;
+  --muted: #c9ad88 !important;
+
+  --gold: #c9a15a !important;
+  --green: #4a090d !important;
+
+  --rule: rgba(201,161,90,.35) !important;
+  --white: #f7ead0 !important;
+}
+
+
+/* ---------- WHOLE WEBSITE ---------- */
+
+html,
+body {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #4a0b10 0%,
+      #310609 45%,
+      #210305 100%
+    ) !important;
+
+  color: #f7ead0 !important;
+}
+
+
+/* ---------- ALL SECTIONS ---------- */
+
+section,
+.invite,
+.details,
+.gallery,
+.rsvp,
+.wishes,
+footer {
+  background:
+    radial-gradient(
+      circle at center,
+      #43090e 0%,
+      #300609 55%,
+      #220305 100%
+    ) !important;
+
+  color: #f7ead0 !important;
+}
+
+
+/* ---------- TEXT ---------- */
+
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+div {
+  color: inherit;
+}
+
+
+/* ---------- MAIN HERO ---------- */
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      rgba(120,20,25,.45),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #43090e 0%,
+      #300609 55%,
+      #210305 100%
+    ) !important;
+
+  color: #f7ead0 !important;
+}
+
+
+/* HERO NAMES */
+
+.hero-name {
+  color: #f8ead4 !important;
+}
+
+.hero-weds {
+  color: #c9a15a !important;
+}
+
+.hero-date {
+  color: #f1dfbd !important;
+}
+
+.hero-symbols {
+  color: #c9a15a !important;
+}
+
+.hero-scroll {
+  color: #c9a15a !important;
+}
+
+
+/* ---------- ARABIC ---------- */
+
+.cover-card-arabic,
+.hero-arabic,
+.arabic {
+  color: #e2c27c !important;
+}
+
+
+/* ---------- GOLD LINES ---------- */
+
+.divider span,
+.front-line,
+.section-eyebrow::before,
+.section-eyebrow::after {
+  background: #c9a15a !important;
+}
+
+
+/* ---------- INVITATION CONTENT ---------- */
+
+.invite {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #4a0b10,
+      #2b0508 70%
+    ) !important;
+
+  color: #f7ead0 !important;
+}
+
+.invite-names,
+.section-title,
+.hero-name {
+  color: #f7ead0 !important;
+}
+
+.invite-names .weds,
+.weds,
+.amp {
+  color: #c9a15a !important;
+}
+
+.invite-body,
+.details-lede {
+  color: #d7bea0 !important;
+}
+
+.accent {
+  color: #d2ad68 !important;
+}
+
+
+/* ---------- DATE BANNER ---------- */
+
+section[style*="background:var(--bg2)"] {
+  background: #2b0508 !important;
+}
+
+section[style*="background:var(--bg2)"] .reveal > div {
+  background:
+    linear-gradient(
+      135deg,
+      #5a0d13,
+      #3a070b
+    ) !important;
+
+  border-top: 1px solid rgba(201,161,90,.4);
+  border-bottom: 1px solid rgba(201,161,90,.4);
+}
+
+
+/* ---------- COUPLE SECTION ---------- */
+
+section[style*="background:var(--bg)"] {
+  background:
+    radial-gradient(
+      circle at center,
+      #43090e,
+      #280407 75%
+    ) !important;
+
+  color: #f7ead0 !important;
+}
+
+
+/* ---------- EVENT CARDS ---------- */
+
+.event-card {
+  background:
+    linear-gradient(
+      145deg,
+      #42090e,
+      #280407
+    ) !important;
+
+  border: 1px solid rgba(201,161,90,.45) !important;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.35) !important;
+
+  color: #f7ead0 !important;
+}
+
+.event-head {
+  border-bottom: 1px solid rgba(201,161,90,.3) !important;
+}
+
+.event-num,
+.event-title,
+.row-label {
+  color: #c9a15a !important;
+}
+
+.row-value {
+  color: #f7ead0 !important;
+}
+
+.row-sub {
+  color: #c9ad88 !important;
+}
+
+.row-icon {
+  color: #c9a15a !important;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.btn-primary {
+  background: #c9a15a !important;
+  color: #2b0508 !important;
+  border-color: #c9a15a !important;
+}
+
+.btn-primary:hover {
+  background: #e0bf79 !important;
+}
+
+.btn-ghost {
+  background: transparent !important;
+  color: #d8bd8c !important;
+  border: 1px solid rgba(201,161,90,.5) !important;
+}
+
+
+/* ---------- RSVP ---------- */
+
+.rsvp,
+.rsvp-section {
+  background:
+    radial-gradient(
+      circle at center,
+      #43090e,
+      #260406
+    ) !important;
+}
+
+.rsvp-card {
+  background:
+    linear-gradient(
+      145deg,
+      #470a0f,
+      #280407
+    ) !important;
+
+  border: 1px solid #c9a15a !important;
+}
+
+
+/* RSVP INPUTS */
+
+input,
+textarea,
+select {
+  background: rgba(20,2,4,.45) !important;
+  color: #f7ead0 !important;
+
+  border: 1px solid rgba(201,161,90,.45) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a98c70 !important;
+}
+
+
+/* ATTENDING / REGRETS */
+
+.attendance-option,
+.rsvp-option {
+  background: rgba(60,7,12,.5) !important;
+  color: #f7ead0 !important;
+  border: 1px solid rgba(201,161,90,.4) !important;
+}
+
+.attendance-option.active,
+.rsvp-option.active {
+  background: #c9a15a !important;
+  color: #2b0508 !important;
+}
+
+
+/* SEND RSVP */
+
+#submitBtn,
+.wfl-submit {
+  background:
+    linear-gradient(
+      135deg,
+      #d2ae68,
+      #b88b43
+    ) !important;
+
+  color: #2b0508 !important;
+
+  border: none !important;
+}
+
+
+/* ---------- WISHES ---------- */
+
+.wish-card {
+  background:
+    linear-gradient(
+      145deg,
+      #42090e,
+      #280407
+    ) !important;
+
+  border: 1px solid rgba(201,161,90,.35) !important;
+
+  color: #f7ead0 !important;
+}
+
+.wish-card-name {
+  color: #c9a15a !important;
+}
+
+.wish-card-msg {
+  color: #e1ccb0 !important;
+}
+
+.wish-card-time {
+  color: #92785d !important;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  background: #200305 !important;
+  color: #c9ad88 !important;
+
+  border-top: 1px solid rgba(201,161,90,.3) !important;
+}
+
+
+/* ---------- DECORATIVE GOLD ---------- */
+
+.dot {
+  background: #c9a15a !important;
+}
+
+.section-eyebrow {
+  color: #c9a15a !important;
+}
+
+.gold,
+.accent,
+.gold-text {
+  color: #c9a15a !important;
+}
+
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #210305;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8d672f;
+  border-radius: 10px;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px) {
+
+  body {
+    background:
+      radial-gradient(
+        circle at center,
+        #43090e,
+        #210305
+      ) !important;
+  }
+
+  .hero,
+  .invite,
+  .details,
+  .rsvp,
+  section {
+    background:
+      linear-gradient(
+        180deg,
+        #42090e,
+        #260406
+      ) !important;
+  }
+
+}
+/* REMOVE ALL AIRPLANES */
+
+.bg-plane,
+.hero-plane,
+.hero .plane,
+.hero .airplane,
+.hero-flight,
+.quran-plane,
+.qplane1,
+.qplane2,
+.flight1,
+.flight2{
+  display:none !important;
+}
+/* =========================================
+   OUR FAMILIES — PAGE 4
+   ========================================= */
+
+/* =========================================
+   OUR FAMILIES — PAGE 4
+   ========================================= */
+
+.families-page{
+  order:4;
+  min-height:100vh;
+  width:100%;
+  box-sizing:border-box;
+  position:relative;
+  overflow:hidden;
+
+  background:#3a080c;
+  color:#f7ead0;
+
+  padding:65px 24px 55px;
+  text-align:center;
+}
+
+.families-content{
+  width:min(715px,92vw);
+  margin:0 auto;
+  position:relative;
+  z-index:5;
+}
+
+/* OUR FAMILIES */
+
+.families-page .section-eyebrow{
+  display:none;
+}
+
+.families-title{
+  font-family:'Italiana',serif;
+  font-style:italic;
+  font-weight:400;
+
+  font-size:clamp(48px,10vw,72px);
+  line-height:1;
+
+  color:#f7ead0;
+
+  margin:0 0 42px;
+}
+
+
+/* =========================================
+   FAMILY BOX
+   ========================================= */
+
+.family-box{
+  border:1px solid rgba(198,163,92,.38);
+  background:rgba(48,7,10,.15);
+
+  padding:45px 30px 42px;
+
+  margin:0 auto;
+  position:relative;
+
+  max-width:680px;
+}
+
+
+/* GROOM / BRIDE */
+
+.family-role{
+  font-family:'Cinzel',serif;
+
+  font-size:9px;
+  letter-spacing:.55em;
+
+  color:var(--gold);
+
+  margin-bottom:18px;
+}
+
+
+/* NAME */
+
+.family-name{
+  font-family:'Italiana',serif;
+  font-style:italic;
+  font-weight:400;
+
+  font-size:clamp(42px,8vw,62px);
+  line-height:1;
+
+  color:#f7ead0;
+
+  margin-bottom:18px;
+}
+
+
+/* SON / DAUGHTER */
+
+.family-parent-label{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+
+  font-size:18px;
+
+  color:#bda98e;
+
+  margin-bottom:7px;
+}
+
+
+/* PARENTS */
+
+.family-parents{
+  font-family:'Cormorant Garamond',serif;
+
+  font-size:clamp(19px,3.5vw,24px);
+
+  font-weight:400;
+
+  line-height:1.45;
+
+  color:#e5c477;
+}
+
+
+/* =========================================
+   DIVIDER
+   ========================================= */
+
+.family-line{
+  width:82%;
+  height:1px;
+
+  background:rgba(198,163,92,.25);
+
+  margin:28px auto 25px;
+}
+
+
+/* =========================================
+   RESIDENCE
+   ========================================= */
+
+.family-residence-label{
+  font-family:'Cinzel',serif;
+
+  font-size:8px;
+  letter-spacing:.45em;
+
+  color:var(--gold);
+
+  margin-bottom:12px;
+}
+
+.family-address{
+  font-family:'Cormorant Garamond',serif;
+
+  font-style:italic;
+
+  font-size:19px;
+
+  line-height:1.6;
+
+  color:#cdbca3;
+}
+
+
+/* =========================================
+   THREE DIAMONDS BETWEEN BOXES
+   ========================================= */
+
+.family-separator{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:25px;
+
+  height:55px;
+
+  margin:0 auto;
+
+  color:var(--gold);
+}
+
+.family-separator span{
+  display:block;
+
+  width:7px;
+  height:7px;
+
+  background:var(--gold);
+
+  transform:rotate(45deg);
+
+  opacity:.85;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media(max-width:600px){
+
+  .families-page{
+    padding:55px 18px 45px;
+  }
+
+  .families-title{
+    font-size:52px;
+    margin-bottom:32px;
+  }
+
+  .family-box{
+    padding:38px 20px 36px;
+  }
+
+  .family-name{
+    font-size:46px;
+  }
+
+  .family-parents{
+    font-size:20px;
+  }
+
+  .family-address{
+    font-size:18px;
+  }
+
+  .family-separator{
+    height:20px;
+    gap:20px;
+  }
+}
+
+.families-content{
+  width:min(720px,92vw);
+  margin:0 auto;
+  position:relative;
+  z-index:5;
+}
+
+.families-page .section-eyebrow{
+  margin-bottom:24px;
+}
+
+.families-title{
+  font-family:'Italiana',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(52px,12vw,82px);
+  line-height:1;
+  color:#f7ead0;
+  margin-bottom:70px;
+}
+
+/* FAMILY BOX */
+
+.family-box{
+  border:1px solid rgba(198,163,92,.38);
+  background:rgba(48,7,10,.18);
+  padding:58px 35px 60px;
+  margin-bottom:38px;
+  position:relative;
+}
+
+/* small GROOM / BRIDE */
+
+.family-role{
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:.55em;
+  color:var(--gold);
+  margin-bottom:26px;
+}
+
+/* NAME */
+
+.family-name{
+  font-family:'Italiana',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(46px,10vw,68px);
+  line-height:1;
+  color:#f7ead0;
+  margin-bottom:24px;
+}
+
+/* SON / DAUGHTER */
+
+.family-parent-label{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:20px;
+  color:#bda98e;
+  margin-bottom:10px;
+}
+
+/* PARENTS */
+
+.family-parents{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(21px,4vw,27px);
+  font-weight:500;
+  line-height:1.65;
+  color:#e5c477;
+}
+
+/* LINE INSIDE BOX */
+
+.family-line{
+  width:82%;
+  height:1px;
+  background:rgba(198,163,92,.25);
+  margin:38px auto 34px;
+}
+
+/* RESIDENCE */
+
+.family-residence-label{
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:.45em;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+.family-address{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:21px;
+  line-height:1.8;
+  color:#cdbca3;
+}
+
+/* LITTLE GOLD SYMBOLS BETWEEN BOXES */
+
+.family-separator{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  margin:0 auto 38px;
+  color:var(--gold);
+  font-size:15px;
+}
+
+.family-separator span{
+  display:block;
+  width:7px;
+  height:7px;
+  background:var(--gold);
+  transform:rotate(45deg);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .families-page{
+    padding:75px 20px 55px;
+  }
+
+  .families-title{
+    margin-bottom:48px;
+  }
+
+  .family-box{
+    padding:45px 22px 48px;
+  }
+
+  .family-name{
+    font-size:48px;
+  }
+
+  .family-parents{
+    font-size:21px;
+  }
+
+  .family-address{
+    font-size:19px;
+  }
+}
+/* =========================================
+   WISHES WALL — MAROON & GOLD STYLE
+   ========================================= */
+
+.wishes {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #4a0b0f 0%,
+      #35070a 45%,
+      #260406 100%
+    ) !important;
+
+  padding: 65px 24px 70px !important;
+  border-bottom: 1px solid rgba(201,161,90,.25) !important;
+}
+
+/* Heading */
+
+.wishes .section-eyebrow {
+  color: #c9a15a !important;
+  font-family: 'Cinzel', serif;
+  letter-spacing: .38em;
+  font-size: 9px;
+  margin-bottom: 12px;
+}
+
+.wishes .section-title {
+  font-family: 'Italiana', serif !important;
+  font-style: italic;
+  font-weight: 400;
+  color: #f4e7cf !important;
+  font-size: clamp(42px, 10vw, 58px);
+  margin-bottom: 28px;
+}
+
+
+/* ================================
+   WISH FORM
+   ================================ */
+
+.wish-form {
+  max-width: 500px !important;
+  margin: 0 auto 32px !important;
+
+  background: rgba(37,5,7,.72) !important;
+
+  border: 1px solid rgba(201,161,90,.32) !important;
+  border-radius: 2px !important;
+
+  padding: 24px 20px !important;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.25) !important;
+}
+
+
+/* INPUTS */
+
+.wish-form input,
+.wish-form textarea {
+  width: 100%;
+
+  background: rgba(255,255,255,.025) !important;
+
+  border: 1px solid rgba(201,161,90,.28) !important;
+  border-radius: 0 !important;
+
+  color: #f4e7cf !important;
+
+  font-family: 'Cormorant Garamond', serif !important;
+  font-style: italic;
+
+  font-size: 17px !important;
+
+  padding: 12px 14px !important;
+
+  outline: none;
+}
+
+.wish-form textarea {
+  min-height: 82px;
+}
+
+.wish-form input::placeholder,
+.wish-form textarea::placeholder {
+  color: #a9937c !important;
+}
+
+.wish-form input:focus,
+.wish-form textarea:focus {
+  border-color: rgba(201,161,90,.7) !important;
+}
+
+
+/* SEND BUTTON */
+
+.wfl-submit {
+  background:
+    linear-gradient(
+      135deg,
+      #d2ae68,
+      #b88b43
+    ) !important;
+
+  color: #2b0508 !important;
+
+  border: none !important;
+  border-radius: 0 !important;
+
+  font-family: 'Cinzel', serif !important;
+  font-size: 9px !important;
+  letter-spacing: .28em;
+
+  padding: 14px !important;
+
+  margin-top: 10px;
+
+  transition: all .3s ease;
+}
+
+.wfl-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(201,161,90,.2);
+}
+
+
+/* ================================
+   WISHES GRID
+   ================================ */
+
+#wgrid {
+  display: flex !important;
+  flex-direction: column !important;
+
+  gap: 14px !important;
+
+  width: min(700px, 100%) !important;
+
+  margin: 0 auto !important;
+}
+
+
+/* ================================
+   INDIVIDUAL WISH CARD
+   ================================ */
+
+.wish-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(66,9,14,.95),
+      rgba(39,5,8,.96)
+    ) !important;
+
+  border: 1px solid rgba(201,161,90,.38) !important;
+
+  border-radius: 3px !important;
+
+  padding: 20px 22px 18px 25px !important;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.15) !important;
+
+  text-align: left;
+
+  overflow: hidden;
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease;
+}
+
+
+/* GOLD LINE ON LEFT */
+
+.wish-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #c9a15a,
+      transparent
+    );
+
+  opacity: .75;
+}
+
+
+.wish-card:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(201,161,90,.6) !important;
+}
+
+
+/* ================================
+   PERSON'S NAME
+   ================================ */
+
+.wish-card-name {
+  font-family: 'Italiana', serif !important;
+
+  font-size: 23px !important;
+
+  font-weight: 400 !important;
+
+  font-style: italic;
+
+  color: #d5b36b !important;
+
+  line-height: 1.2;
+
+  margin-bottom: 7px !important;
+}
+
+
+/* ================================
+   WISH MESSAGE
+   ================================ */
+
+.wish-card-msg {
+  font-family: 'Cormorant Garamond', serif !important;
+
+  font-size: 18px !important;
+
+  font-weight: 400 !important;
+
+  font-style: italic;
+
+  color: #e5d3ba !important;
+
+  line-height: 1.65 !important;
+}
+
+
+/* ================================
+   TIME
+   ================================ */
+
+.wish-card-time {
+  font-family: 'Cinzel', serif !important;
+
+  font-size: 7px !important;
+
+  letter-spacing: .25em;
+
+  color: #a88b65 !important;
+
+  margin-top: 10px !important;
+
+  opacity: .65;
+}
+
+
+/* ================================
+   LOAD MORE
+   ================================ */
+
+#loadmore-wrap {
+  margin-top: 24px !important;
+}
+
+#loadMoreBtn {
+  background: transparent !important;
+
+  border: 1px solid rgba(201,161,90,.35) !important;
+
+  border-radius: 0 !important;
+
+  color: #c9a15a !important;
+
+  font-family: 'Cinzel', serif !important;
+
+  font-size: 8px;
+
+  letter-spacing: .25em;
+
+  padding: 11px 28px;
+
+  transition: all .3s ease;
+}
+
+#loadMoreBtn:hover {
+  background: rgba(201,161,90,.08) !important;
+  border-color: #c9a15a !important;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  .wishes {
+    padding: 55px 18px 60px !important;
+  }
+
+  .wishes .section-title {
+    font-size: 44px;
+  }
+
+  .wish-form {
+    padding: 20px 16px !important;
+  }
+
+  #wgrid {
+    gap: 12px !important;
+  }
+
+  .wish-card {
+    padding: 18px 18px 16px 22px !important;
+  }
+
+  .wish-card-name {
+    font-size: 21px !important;
+  }
+
+  .wish-card-msg {
+    font-size: 17px !important;
+  }
+}
+/* =========================================
+   OUR FAMILIES — SMALLER FONT
+   ========================================= */
+
+.families-title {
+  font-size: clamp(38px, 8vw, 55px) !important;
+}
+
+.family-card-name {
+  font-size: 18px !important;
+}
+
+.family-card-role {
+  font-size: 7px !important;
+}
+
+.family-detail {
+  font-size: 14.5px !important;
+  line-height: 1.7 !important;
+}
+
+.family-detail strong {
+  font-size: 7px !important;
+}
+
+.family-photo {
+  font-size: 23px !important;
+}
+/* OUR FAMILIES - FINAL ADJUSTMENTS */
+
+.families-title {
+  font-size: 48px !important;
+  margin-bottom: 28px !important;
+}
+
+.family-box {
+  padding-top: 32px !important;
+  padding-bottom: 38px !important;
+}
+
+.family-box .family-name {
+  font-size: 42px !important;
+}
+/* REMOVE LINE BETWEEN WISHES AND GET IN TOUCH */
+
+.wishes {
+  border-bottom: none !important;
+}
+
+.get-in-touch,
+.contact-section {
+  border-top: none !important;
+}
+/* ✨ GOLDEN CURSOR FIREWORK */
+
+.cursor-firework {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.cursor-firework span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 3px;
+  height: 14px;
+
+  margin-left: -1.5px;
+  margin-top: -7px;
+
+  border-radius: 3px;
+
+  background: #d8b76b;
+
+  box-shadow:
+    0 0 5px #d8b76b,
+    0 0 10px rgba(216,183,107,.7);
+
+  transform-origin: 50% 100%;
+
+  animation: cursorFirework 0.8s ease-out forwards;
+}
+
+@keyframes cursorFirework {
+
+  0% {
+    opacity: 1;
+    transform:
+      rotate(var(--angle))
+      translateY(0)
+      scale(.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      rotate(var(--angle))
+      translateY(-32px)
+      scale(1);
+  }
+}
+/* =========================================================
+   FINAL CONTACT LAYOUT — DO NOT REMOVE
+   ========================================================= */
+
+.contact-grid{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:22px !important;
+  width:min(100%,900px) !important;
+  margin:0 auto !important;
+}
+
+.cbtn{
+  width:100% !important;
+  min-height:145px !important;
+  padding:30px 38px !important;
+
+  border:1px solid rgba(198,163,92,.42) !important;
+  border-radius:0 !important;
+  background:rgba(48,7,10,.35) !important;
+
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+
+  text-align:left !important;
+  box-sizing:border-box !important;
+}
+
+.cbtn > span:first-child{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  text-align:left !important;
+  flex:1 !important;
+}
+
+/* NAME — BIG */
+.contact-person{
+  order:1 !important;
+
+  font-family:'Cormorant Garamond',serif !important;
+  font-size:36px !important;
+  font-style:italic !important;
+  font-weight:400 !important;
+  line-height:1 !important;
+
+  color:#f3e6cf !important;
+
+  display:block !important;
+  margin:0 0 8px 0 !important;
+}
+
+/* ROLE — SMALL UNDER NAME */
+.contact-role{
+  order:2 !important;
+
+  font-family:'Cinzel',serif !important;
+  font-size:10px !important;
+  font-weight:400 !important;
+  letter-spacing:.32em !important;
+
+  color:#c6a35c !important;
+
+  display:block !important;
+  line-height:1.4 !important;
+}
+
+/* ICONS STAY ON RIGHT */
+.contact-actions{
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+
+  gap:12px !important;
+  flex-shrink:0 !important;
+  margin-left:30px !important;
+}
+
+.contact-action{
+  width:72px !important;
+  height:72px !important;
+
+  border:1px solid rgba(198,163,92,.38) !important;
+  background:transparent !important;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  color:#c6a35c !important;
+  text-decoration:none !important;
+  box-sizing:border-box !important;
+}
+
+.contact-action svg{
+  width:27px !important;
+  height:27px !important;
+  stroke:currentColor !important;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  .contact{
+    padding:65px 18px 55px !important;
+  }
+
+  .contact-grid{
+    width:100% !important;
+    gap:18px !important;
+  }
+
+  .cbtn{
+    min-height:125px !important;
+    padding:24px 20px !important;
+  }
+
+  .contact-person{
+    font-size:30px !important;
+  }
+
+  .contact-role{
+    font-size:8px !important;
+    letter-spacing:.24em !important;
+  }
+
+  .contact-actions{
+    gap:7px !important;
+    margin-left:15px !important;
+  }
+
+  .contact-action{
+    width:52px !important;
+    height:52px !important;
+  }
+
+  .contact-action svg{
+    width:21px !important;
+    height:21px !important;
+  }
+}
+/* ==========================================
+   FINAL RSVP / CONTACT LAYOUT
+   ========================================== */
+
+.contact-grid {
+  width: min(100%, 900px) !important;
+  margin: 35px auto 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 22px !important;
+}
+
+/* EACH PERSON'S BOX */
+.cbtn {
+  width: 100% !important;
+  min-height: 145px !important;
+  box-sizing: border-box !important;
+
+  padding: 30px 38px !important;
+
+  border: 1px solid rgba(198,163,92,.42) !important;
+  border-radius: 0 !important;
+  background: rgba(48,7,10,.35) !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  text-decoration: none !important;
+}
+
+/* LEFT SIDE */
+.cbtn > span:first-child {
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: flex-start !important;
+  justify-content: center !important;
+
+  text-align: left !important;
+
+  flex: 1 !important;
+}
+
+/* NAME — FIRST AND BIG */
+.cbtn > span:first-child > span.contact-person {
+  order: 1 !important;
+
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 36px !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+
+  color: #f3e6cf !important;
+
+  display: block !important;
+  margin: 0 0 7px 0 !important;
+
+  line-height: 1 !important;
+}
+
+/* ROLE — BELOW NAME */
+.cbtn > span:first-child > span.contact-role {
+  order: 2 !important;
+
+  font-family: 'Cinzel', serif !important;
+  font-size: 10px !important;
+  letter-spacing: .28em !important;
+
+  color: #c6a35c !important;
+
+  display: block !important;
+}
+/* ICONS — RIGHT SIDE */
+.contact-actions {
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: flex-end !important;
+
+  gap: 12px !important;
+
+  flex-shrink: 0 !important;
+  margin-left: 30px !important;
+}
+
+/* PHONE + WHATSAPP BOX */
+.contact-action {
+  width: 72px !important;
+  height: 72px !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid rgba(198,163,92,.42) !important;
+  background: transparent !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  color: #c6a35c !important;
+
+  text-decoration: none !important;
+
+  transition: .3s ease !important;
+}
+
+/* HOVER */
+.contact-action:hover {
+  background: rgba(198,163,92,.10) !important;
+  border-color: #c6a35c !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ICON SIZE */
+.contact-action svg {
+  width: 27px !important;
+  height: 27px !important;
+
+  stroke: currentColor !important;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .contact-grid {
+    width: 100% !important;
+    gap: 18px !important;
+    margin-top: 30px !important;
+  }
+
+  .cbtn {
+    min-height: 120px !important;
+    padding: 22px 18px !important;
+  }
+
+  .cbtn > span:first-child > span.contact-person {
+    font-size: 29px !important;
+  }
+
+  .cbtn > span:first-child > span:first-child {
+    font-size: 8px !important;
+    letter-spacing: .20em !important;
+  }
+
+  .contact-actions {
+    gap: 7px !important;
+    margin-left: 15px !important;
+  }
+
+  .contact-action {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .contact-action svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
+}
+/* ==========================================
+   FINAL FIX — BOTH CONTACT BOXES
+   ========================================== */
+
+.contact-grid {
+  width: min(100%, 1000px) !important;
+  max-width: 1000px !important;
+  margin: 35px auto 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 22px !important;
+}
+
+/* FORCE EVERY CONTACT BOX TO SAME WIDTH */
+.contact-grid .cbtn,
+.contact > .cbtn {
+  width: min(100%, 1000px) !important;
+  max-width: 1000px !important;
+  min-height: 170px !important;
+
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  padding: 30px 38px !important;
+
+  border: 1px solid rgba(198,163,92,.42) !important;
+  border-radius: 0 !important;
+  background: rgba(48,7,10,.35) !important;
+}
+
+/* TEXT ON LEFT */
+.contact .cbtn > span:first-child {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  text-align: left !important;
+}
+
+/* NAME */
+.contact .contact-person {
+  display: block !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 42px !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+ color: #ffffff !important;
+  margin-bottom: 8px !important;
+}
+
+/* ROLE */
+.contact .contact-role {
+  display: block !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  letter-spacing: .28em !important;
+  line-height: 1.4 !important;
+  color: #c6a35c !important;
+}
+
+/* ICONS ON RIGHT */
+.contact .contact-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  flex-shrink: 0 !important;
+  margin-left: 30px !important;
+}
+
+/* ICON BOXES */
+.contact .contact-action {
+  width: 72px !important;
+  height: 72px !important;
+  flex-shrink: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid rgba(198,163,92,.42) !important;
+  background: transparent !important;
+
+  color: #c6a35c !important;
+}
+
+/* ICON */
+.contact .contact-action svg {
+  width: 27px !important;
+  height: 27px !important;
+  stroke: currentColor !important;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .contact-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 18px !important;
+    margin-top: 30px !important;
+  }
+
+  .contact-grid .cbtn,
+  .contact > .cbtn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 125px !important;
+    padding: 24px 20px !important;
+  }
+
+  .contact .contact-person {
+    font-size: 30px !important;
+  }
+
+  .contact .contact-role {
+    font-size: 8px !important;
+    letter-spacing: .20em !important;
+  }
+
+  .contact .contact-actions {
+    gap: 7px !important;
+    margin-left: 15px !important;
+  }
+
+  .contact .contact-action {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  .contact .contact-action svg {
+    width: 21px !important;
+    height: 21px !important;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="wedding-bg-effects">
+
+  <!-- ONLY 4 TWINKLES -->
+  <span class="twinkle"></span>
+  <span class="twinkle"></span>
+  <span class="twinkle"></span>
+  <span class="twinkle"></span>
+
+
+
+</div>
+
+<!-- DUST TWINKLE -->
+<div class="travel-dots">
+  <div class="travel-dot"></div><div class="travel-dot"></div><div class="travel-dot"></div>
+  <div class="travel-dot"></div><div class="travel-dot"></div><div class="travel-dot"></div>
+  <div class="travel-dot"></div><div class="travel-dot"></div>
+</div>
+
+<!-- LANDING -->
+<div id="landing">
+  <!-- Hero photo background (admin-uploadable) -->
+  <div data-slot="landing_bg" style="position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none">
+    <img class="slot-img" id="landingBgImg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;display:none">
+    <div id="landingScrim" style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(247,242,231,.82) 0%,rgba(247,242,231,.55) 26%,rgba(247,242,231,.55) 68%,rgba(247,242,231,.9) 100%);display:none"></div>
+  </div>
+  <button id="landingBgPlusBtn" style="display:none;position:absolute;top:16px;right:16px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--gold);border:none;font-size:22px;color:#fff;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.25)">+</button>
+
+  <div class="ornament tl"></div>
+  <div class="ornament tr"></div>
+  <div class="ornament bl"></div>
+  <div class="ornament br"></div>
+
+  <!-- Glitter / sparkle effect -->
+  <div class="glitter" aria-hidden="true">
+    <span class="spark" style="left:32.8%;top:17.7%;width:2px;height:2px;animation-duration:2.7s;animation-delay:-1.4s"></span>
+    <span class="spark" style="left:36.7%;top:9.3%;width:6px;height:6px;animation-duration:3.0s;animation-delay:-0.3s"></span>
+    <span class="spark" style="left:41.7%;top:25.9%;width:6px;height:6px;animation-duration:3.4s;animation-delay:-2.8s"></span>
+    <span class="spark" style="left:13.8%;top:24.3%;width:2px;height:2px;animation-duration:3.6s;animation-delay:-1.4s"></span>
+    <span class="spark" style="left:94.7%;top:8.2%;width:3px;height:3px;animation-duration:3.1s;animation-delay:-0.4s"></span>
+    <span class="spark" style="left:13.2%;top:32.1%;width:3px;height:3px;animation-duration:2.8s;animation-delay:-1.6s"></span>
+    <span class="spark" style="left:19.8%;top:12.9%;width:2px;height:2px;animation-duration:3.6s;animation-delay:-2.2s"></span>
+    <span class="spark" style="left:49.2%;top:52.4%;width:4px;height:4px;animation-duration:3.4s;animation-delay:-3.1s"></span>
+    <span class="spark" style="left:36.4%;top:26.6%;width:3px;height:3px;animation-duration:3.9s;animation-delay:-1.0s"></span>
+    <span class="spark" style="left:56.6%;top:51.8%;width:4px;height:4px;animation-duration:3.9s;animation-delay:-1.1s"></span>
+    <span class="spark" style="left:95.1%;top:14.7%;width:4px;height:4px;animation-duration:2.9s;animation-delay:-1.0s"></span>
+    <span class="spark" style="left:90.7%;top:42.4%;width:2px;height:2px;animation-duration:4.0s;animation-delay:-2.3s"></span>
+    <span class="spark" style="left:85.2%;top:32.6%;width:4px;height:4px;animation-duration:3.7s;animation-delay:-2.1s"></span>
+    <span class="spark" style="left:45.3%;top:80.4%;width:3px;height:3px;animation-duration:3.5s;animation-delay:-2.3s"></span>
+    <span class="spark" style="left:7.8%;top:67.8%;width:5px;height:5px;animation-duration:3.1s;animation-delay:-1.2s"></span>
+    <span class="spark" style="left:65.5%;top:6.1%;width:5px;height:5px;animation-duration:3.2s;animation-delay:-2.0s"></span>
+    <span class="spark" style="left:48.9%;top:23.9%;width:3px;height:3px;animation-duration:2.8s;animation-delay:-0.7s"></span>
+    <span class="spark" style="left:39.1%;top:83.3%;width:2px;height:2px;animation-duration:2.9s;animation-delay:-1.2s"></span>
+    <span class="spark" style="left:28.4%;top:16.5%;width:4px;height:4px;animation-duration:4.2s;animation-delay:-1.2s"></span>
+    <span class="spark" style="left:41.5%;top:36.6%;width:4px;height:4px;animation-duration:4.3s;animation-delay:-0.6s"></span>
+    <span class="spark" style="left:18.7%;top:25.1%;width:3px;height:3px;animation-duration:2.6s;animation-delay:-2.2s"></span>
+    <span class="spark" style="left:19.3%;top:29.7%;width:3px;height:3px;animation-duration:3.4s;animation-delay:-1.3s"></span>
+    <span class="spark" style="left:55.8%;top:90.7%;width:6px;height:6px;animation-duration:4.3s;animation-delay:-2.8s"></span>
+    <span class="spark" style="left:72.3%;top:45.6%;width:6px;height:6px;animation-duration:3.3s;animation-delay:-1.3s"></span>
+    <span class="spark" style="left:11.8%;top:61.7%;width:2px;height:2px;animation-duration:2.9s;animation-delay:-2.9s"></span>
+    <span class="spark" style="left:43.9%;top:14.0%;width:2px;height:2px;animation-duration:2.8s;animation-delay:-1.6s"></span>
+    <span class="spark" style="left:53.0%;top:90.4%;width:2px;height:2px;animation-duration:2.7s;animation-delay:-0.6s"></span>
+    <span class="spark" style="left:37.7%;top:61.7%;width:4px;height:4px;animation-duration:3.7s;animation-delay:-1.8s"></span>
+    <span class="spark" style="left:13.0%;top:48.4%;width:5px;height:5px;animation-duration:3.5s;animation-delay:-1.1s"></span>
+    <span class="spark" style="left:15.7%;top:72.2%;width:3px;height:3px;animation-duration:3.5s;animation-delay:-2.4s"></span>
+    <span class="spark" style="left:51.1%;top:22.7%;width:6px;height:6px;animation-duration:3.3s;animation-delay:-2.3s"></span>
+    <span class="spark" style="left:88.8%;top:73.0%;width:3px;height:3px;animation-duration:4.4s;animation-delay:-3.8s"></span>
+    <span class="spark" style="left:68.1%;top:27.8%;width:4px;height:4px;animation-duration:4.2s;animation-delay:-1.5s"></span>
+    <span class="spark" style="left:23.2%;top:53.3%;width:6px;height:6px;animation-duration:3.2s;animation-delay:-0.7s"></span>
+    <span class="spark" style="left:79.1%;top:93.6%;width:3px;height:3px;animation-duration:4.1s;animation-delay:-3.4s"></span>
+    <span class="spark" style="left:72.3%;top:24.6%;width:6px;height:6px;animation-duration:3.5s;animation-delay:-2.6s"></span>
+    <span class="spark" style="left:96.0%;top:75.9%;width:5px;height:5px;animation-duration:3.1s;animation-delay:-2.1s"></span>
+    <span class="spark" style="left:92.9%;top:44.7%;width:4px;height:4px;animation-duration:4.3s;animation-delay:-1.6s"></span>
+    <span class="spark" style="left:22.9%;top:24.6%;width:3px;height:3px;animation-duration:3.2s;animation-delay:-1.5s"></span>
+    <span class="spark" style="left:95.6%;top:59.5%;width:2px;height:2px;animation-duration:3.5s;animation-delay:-2.3s"></span>
+    <span class="spark" style="left:78.0%;top:11.7%;width:2px;height:2px;animation-duration:4.2s;animation-delay:-3.3s"></span>
+    <span class="spark" style="left:73.3%;top:47.5%;width:3px;height:3px;animation-duration:3.4s;animation-delay:-2.2s"></span>
+    <span class="spark" style="left:10.2%;top:90.1%;width:4px;height:4px;animation-duration:3.4s;animation-delay:-2.5s"></span>
+    <span class="spark" style="left:10.1%;top:18.5%;width:3px;height:3px;animation-duration:2.6s;animation-delay:-1.5s"></span>
+    <span class="spark" style="left:46.2%;top:63.7%;width:5px;height:5px;animation-duration:3.8s;animation-delay:-1.3s"></span>
+    <span class="spark" style="left:54.1%;top:15.9%;width:2px;height:2px;animation-duration:4.0s;animation-delay:-2.9s"></span>
+    <span class="spark" style="left:11.8%;top:72.2%;width:3px;height:3px;animation-duration:3.4s;animation-delay:-3.0s"></span>
+    <span class="spark" style="left:80.5%;top:23.2%;width:3px;height:3px;animation-duration:3.0s;animation-delay:-1.5s"></span>
+    <span class="spark" style="left:74.5%;top:33.7%;width:6px;height:6px;animation-duration:3.4s;animation-delay:-0.4s"></span>
+    <span class="spark" style="left:88.5%;top:36.2%;width:5px;height:5px;animation-duration:3.8s;animation-delay:-3.1s"></span>
+    <span class="spark" style="left:51.1%;top:79.3%;width:6px;height:6px;animation-duration:2.8s;animation-delay:-0.4s"></span>
+    <span class="spark" style="left:50.5%;top:83.4%;width:3px;height:3px;animation-duration:3.7s;animation-delay:-2.9s"></span>
+  </div>
+
+  <div class="wedding-cover" onclick="openInvite()">
+
+  <!-- INVITATION CARD INSIDE -->
+  <div class="cover-card">
+
+    <div class="cover-card-content">
+
+      <div class="cover-card-arabic">
+        بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+      </div>
+
+      <div class="cover-card-small">
+        BASIL · FATHIMA
+      </div>
+
+      <div class="cover-card-names">
+        Basil
+        <span>&amp;</span>
+        Fathima
+      </div>
+
+      <div class="cover-card-date">
+        11 · OCTOBER · 2026
+      </div>
+
+      <div class="cover-card-venue">
+        MELA Auditorium<br>
+        Muvattupuzha
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ENVELOPE FLAPS -->
+
+  <div class="cover-left-flap"></div>
+
+  <div class="cover-right-flap"></div>
+
+  <div class="cover-top-flap"></div>
+
+
+  <!-- GOLD SEAL -->
+
+    <div class="envelope-seal">
+    ✦
+  </div>
+
+  <!-- FRONT COVER TEXT -->
+  <div class="envelope-front-text">
+
+    <div class="front-names">
+      BASIL <span>&amp;</span> FATHIMA
+    </div>
+
+    <div class="front-line"></div>
+
+    <div class="front-title">
+      NIKKAH INVITATION
+    </div>
+
+    <div class="front-date">
+      11 OCTOBER 2026
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="cover-open">
+  — TAP TO OPEN —
+</div>
+</div>
+
+<div id="main">
+
+<!-- INVITE -->
+<!-- OPENED HERO PAGE -->
+<section class="opened-hero">
+
+  <!-- TOP CORNER DETAILS -->
+  <div class="hero-monogram">B&amp;F</div>
+
+  <div class="hero-year">
+    OCTOBER · MMXXVI
+  </div>
+
+  <!-- DECORATIVE STARS -->
+  <span class="hero-star star1">✦</span>
+  <span class="hero-star star2">✦</span>
+  <span class="hero-star star3">✦</span>
+  <span class="hero-star star4">✦</span>
+  <span class="hero-star star5">•</span>
+  <span class="hero-star star6">•</span>
+
+
+
+  <!-- MAIN CONTENT -->
+  <div class="hero-center">
+
+    <div class="hero-arabic">
+      بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+    </div>
+
+    <div class="hero-translation">
+      In the name of Allah, the Most Gracious, the Most Merciful
+    </div>
+
+    <div class="hero-line"></div>
+
+    <div class="hero-name">
+      BASIL
+    </div>
+
+    <div class="hero-weds">
+      ✦ weds ✦
+    </div>
+
+    <div class="hero-name">
+      FATHIMA
+    </div>
+
+    <div class="name-divider"></div>
+
+
+
+
+    <div class="hero-date">
+      SUNDAY · 11 OCTOBER 2026
+    </div>
+
+  </div>
+
+  <div class="hero-scroll">
+    SCROLL
+  </div>
+
+</section>
+
+
+</section>
+<!-- OUR FAMILIES — PAGE 4 -->
+
+<section class="families-page">
+
+  <div class="families-content">
+
+    <div class="section-eyebrow">
+    </div>
+
+    <h2 class="families-title">
+      Our Families
+    </h2>
+    <!-- GROOM -->
+   <div class="family-box">
+
+      <div class="family-role">
+        G R O O M
+      </div>
+
+      <div class="family-name">
+        Basil Sahad
+      </div>
+
+      <div class="family-parent-label">
+        Son of
+      </div>
+
+      <div class="family-parents">
+        Mr. K P Sahad<br>
+        &amp; Mrs. Raziya Sahad
+      </div>
+
+      <div class="family-line"></div>
+
+      <div class="family-residence-label">
+        R E S I D E N C E
+      </div>
+
+      <div class="family-address">
+        Basma House<br>
+        Kozhikode
+      </div>
+
+    </div>
+
+
+    <!-- SEPARATOR -->
+
+    <div class="family-separator">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+
+    <!-- BRIDE -->
+    <div class="family-box">
+     <div class="family-role">
+        B R I D E
+      </div>
+
+      <div class="family-name">
+        Fathima K Faisal
+      </div>
+
+      <div class="family-parent-label">
+        Daughter of
+      </div>
+
+      <div class="family-parents">
+        Mr. K.M Faisal<br>
+        &amp; Mrs. Nusaifa Faisal
+      </div>
+
+      <div class="family-line"></div>
+
+      <div class="family-residence-label">
+        R E S I D E N C E
+      </div>
+
+      <div class="family-address">
+        Karikuzhiyil House<br>
+        Muvattupuzha
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</section>
+
+<!-- QURAN PAGE — PAGE 2 -->
+
+<section class="quran-page">
+
+  <div class="quran-stars">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+
+
+  <div class="quran-content">
+
+    <div class="section-eyebrow">
+      — FROM THE HOLY QUR'AN —
+    </div>
+
+    <div class="quran-arabic" dir="rtl">
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ
+      أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+      وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+    </div>
+
+    <div class="quran-divider">
+      <span></span>
+      ✦
+      <span></span>
+    </div>
+
+    <div class="quran-translation">
+      “And among His signs is that He created for you
+      spouses from among yourselves so that you may
+      find tranquility in them; and He placed between
+      you affection and mercy.”
+    </div>
+
+    <div class="quran-reference">
+      — AR-RUM · 30:21 —
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EVENTS -->
+<!-- EVENTS -->
+
+<section class="details">
+  <div class="reveal">
+
+    <div class="section-eyebrow" style="text-align:center">
+      — THE BLESSED OCCASION —
+    </div>
+
+    <h2 class="section-title" style="text-align:center">
+      Join us for the<br>
+      <span style="color:var(--gold)">Nikah Ceremony</span>
+    </h2>
+
+    <div class="event-card">
+
+      <div style="
+        background:var(--gold);
+        color:#4a170f;
+        text-align:center;
+        padding:9px;
+        font-family:'Cinzel',serif;
+        font-size:10px;
+        letter-spacing:.32em;
+      ">
+        N I K A H &nbsp; C E R E M O N Y
+      </div>
+
+      <div style="padding:30px 24px 28px">
+
+        <!-- EVENT HEADER -->
+        <div style="
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          margin-bottom:14px;
+        ">
+         
+        </div>
+
+        <!-- TITLE -->
+        <div style="
+          font-family:'Cormorant Garamond',serif;
+          font-style:italic;
+          font-size:38px;
+          color:var(--cream);
+          margin-bottom:20px;
+        ">
+          Nikah Ceremony
+        </div>
+
+        <!-- DATE -->
+        <div style="
+          display:flex;
+          border-top:1px solid var(--rule);
+          border-bottom:1px solid var(--rule);
+          padding:13px 0;
+        ">
+          <div style="
+            width:55px;
+            font-family:'Cinzel',serif;
+            font-size:9px;
+            letter-spacing:.25em;
+            color:var(--gold);
+          ">
+            DATE
+          </div>
+
+          <div style="
+            font-family:'Cormorant Garamond',serif;
+            font-size:18px;
+            font-weight:600;
+            color:var(--cream);
+          ">
+            Sunday, 11 October 2026
+          </div>
+        </div>
+
+        <!-- TIME -->
+        <div style="
+          display:flex;
+          border-bottom:1px solid var(--rule);
+          padding:13px 0;
+        ">
+          <div style="
+            width:55px;
+            font-family:'Cinzel',serif;
+            font-size:9px;
+            letter-spacing:.25em;
+            color:var(--gold);
+          ">
+            TIME
+          </div>
+
+          <div style="
+            font-family:'Cormorant Garamond',serif;
+            font-size:18px;
+            font-weight:600;
+            color:var(--cream);
+          ">
+            12:00 PM – 2:00 PM
+          </div>
+        </div>
+
+        <!-- VENUE -->
+        <div style="
+          display:flex;
+          padding:13px 0 25px;
+        ">
+          <div style="
+            width:55px;
+            font-family:'Cinzel',serif;
+            font-size:9px;
+            letter-spacing:.25em;
+            color:var(--gold);
+          ">
+            VENUE
+          </div>
+
+          <div>
+            <div style="
+              font-family:'Cormorant Garamond',serif;
+              font-size:18px;
+              font-weight:600;
+              color:var(--cream);
+            ">
+              MELA Auditorium
+            </div>
+
+            <div style="
+              font-family:'Cormorant Garamond',serif;
+              font-style:italic;
+              font-size:15px;
+              color:var(--muted);
+              margin-top:3px;
+            ">
+              Muvattupuzha
+            </div>
+          </div>
+        </div>
+
+        <!-- LOCATION ONLY -->
+        <div class="event-actions" style="margin-top:0">
+
+          <a
+            class="btn btn-ghost"
+            href="https://maps.app.goo.gl/kz8GYeEsLJSo7KW96"
+            target="_blank"
+            rel="noopener"
+            style="width:100%;"
+          >
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            LOCATION
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+
+  
+
+  </div>
+</section>
+
+
+<!-- WISHES WALL -->
+<section class="wishes">
+  <div class="reveal">
+    <div class="section-eyebrow" style="text-align:center">— SEND YOUR HEARTFELT DUAS & WISHES —</div>
+    <h2 class="section-title" style="text-align:center">Wishes Wall</h2>
+    <div class="wish-form">
+      <input class="input" id="wisherName" placeholder="Your name" style="margin-bottom:10px"/>
+      <textarea id="wisherMsg" placeholder="Write a blessing or warm wish for Basil &amp; Fathima.."></textarea>
+      <button class="wfl-submit" onclick="submitWish()">SEND WISH ✦</button>
+    </div>
+    <div id="wwall">
+      <div id="wgrid"></div>
+      <div id="loadmore-wrap"><button id="loadMoreBtn" onclick="loadMore()">LOAD MORE</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+
+  <div class="section-eyebrow">
+    RSVP & ENQUIRIES
+  </div>
+
+  <p>
+    For any enquiries, please feel free to reach out.
+  </p>
+
+
+ <div class="contact-grid">
+
+  <!-- FAISAL KM -->
+  <div class="cbtn">
+
+    <span>
+      <span class="contact-person">
+        Faisal KM
+      </span>
+
+      <span class="contact-role">
+        CONTACT · BRIDE'S FATHER
+      </span>
+    </span>
+
+    <div class="contact-actions">
+
+        <!-- PHONE -->
+        <a
+          class="contact-action"
+          href="tel:9447457868"
+          aria-label="Call Faisal KM"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+            19.79 19.79 0 0 1-8.63-3.07
+            19.5 19.5 0 0 1-6-6
+            19.79 19.79 0 0 1-3.07-8.67
+            A2 2 0 0 1 4.11 2h3
+            a2 2 0 0 1 2 1.72
+            12.84 12.84 0 0 0 .7 2.81
+            2 2 0 0 1-.45 2.11L8.09 9.91
+            a16 16 0 0 0 6 6l1.27-1.27
+            a2 2 0 0 1 2.11-.45
+            12.84 12.84 0 0 0 2.81.7
+            A2 2 0 0 1 22 16.92z"/>
+
+          </svg>
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+        <a
+          class="contact-action"
+          href="https://wa.me/919447457868"
+          target="_blank"
+          rel="noopener"
+          aria-label="WhatsApp Faisal KM"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <path d="M21 11.5a8.38 8.38 0 0 1-9
+            8.3 8.5 8.5 0 0 1-4.1-1
+            L3 20l1.3-4.7
+            A8.3 8.3 0 1 1 21 11.5z"/>
+
+            <path d="M8.5 8.5c.2-.4.4-.4.7-.4
+            h.5c.2 0 .4.1.5.4l.7 1.7"/>
+
+          </svg>
+
+        </a>
+
+      </div>
+
+    </div>
+</div>  <!-- cbtn -->
+
+
+   <!-- BILAL FAISAL -->
+<div class="cbtn">
+
+  <span>
+    <span class="contact-person">
+      Bilal Faisal
+    </span>
+
+    <span class="contact-role">
+      CONTACT · BRIDE'S BROTHER
+    </span>
+  </span>
+
+  <div class="contact-actions">
+
+        <!-- PHONE -->
+        <a
+          class="contact-action"
+          href="tel:8606766606"
+          aria-label="Call Bilal Faisal"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+            19.79 19.79 0 0 1-8.63-3.07
+            19.5 19.5 0 0 1-6-6
+            19.79 19.79 0 0 1-3.07-8.67
+            A2 2 0 0 1 4.11 2h3
+            a2 2 0 0 1 2 1.72
+            12.84 12.84 0 0 0 .7 2.81
+            2 2 0 0 1-.45 2.11L8.09 9.91
+            a16 16 0 0 0 6 6l1.27-1.27
+            a2 2 0 0 1 2.11-.45
+            12.84 12.84 0 0 0 2.81.7
+            A2 2 0 0 1 22 16.92z"/>
+
+          </svg>
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+        <a
+          class="contact-action"
+          href="https://wa.me/918606766606"
+          target="_blank"
+          rel="noopener"
+          aria-label="WhatsApp Bilal Faisal"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <path d="M21 11.5a8.38 8.38 0 0 1-9
+            8.3 8.5 8.5 0 0 1-4.1-1
+            L3 20l1.3-4.7
+            A8.3 8.3 0 1 1 21 11.5z"/>
+
+            <path d="M8.5 8.5c.2-.4.4-.4.7-.4
+            h.5c.2 0 .4.1.5.4l.7 1.7"/>
+
+          </svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+<section class="contact">
+  <h3>بَارَكَ اللَّهُ لَكُمَا</h3>
+  <p>Bilal & Badhusha</p>
+
+  </div>
+</section>
+
+
+</div><!-- /main -->
+
+<button id="bgmBtn" onclick="bgmToggle()">
+  <div class="bgm-ring"></div>
+  <svg id="bgmPlay" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#425c39" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+  </svg>
+  <svg id="bgmMute" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a7a4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><line x1="3" y1="3" x2="21" y2="21"/>
+  </svg>
+</button>
+<audio id="bgmAudio" loop preload="auto"></audio>
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CLOUDINARY + FIREBASE CONFIG ─────────────────────────────────────────
+  const CLOUD_NAME    = 'dormnrhdf';
+  const UPLOAD_PRESET = 'ml_default';
+  const COUPLE_FOLDER = 'digiwed-invitations/fathima-abc';
+  const IMG_PATH  = 'fathima-abc/media';
+  const RSVP_PATH = 'fathima-abc/rsvp';
+  const WISH_PATH = 'fathima-abc/wishes';
+  const ADMIN_PIN = '2026AR';
+  let editMode = false;
+
+  // ── FIREBASE ────────────────────────────────────────────────────────────
+  let db = null;
+  try {
+    if(typeof firebase !== 'undefined'){
+      const cfg = {
+        apiKey:"AIzaSy841fvxVl1KeHOro6WKJ72o22izuCpJ-b4",
+        authDomain:"yaseen-jumana-wedding.firebaseapp.com",
+        databaseURL:"https://yaseen-jumana-wedding-default-rtdb.firebaseio.com",
+        projectId:"yaseen-jumana-wedding",
+        storageBucket:"yaseen-jumana-wedding.firebasestorage.app",
+        messagingSenderId:"355557621111",
+        appId:"1:355557621111:web:d0b78c34bfe5a53b69f572"
+      };
+      if(!firebase.apps.length) firebase.initializeApp(cfg);
+      db = firebase.database(); window._db = db;
+      _bgmInit();
+    }
+  } catch(e){ console.warn('Firebase:', e); }
+
+  // ── ADMIN / EDIT MODE ─────────────────────────────────────────────────────
+  window.enableEditMode = function(){
+    const pin = prompt('Enter admin PIN:');
+    if(pin !== ADMIN_PIN){ showToast('INCORRECT PIN'); return; }
+    editMode = true;
+    if(!document.getElementById('main').classList.contains('show')) openInvite();
+    setTimeout(()=>{
+      document.querySelectorAll('.img-slot-add').forEach(el => el.style.display='flex');
+      document.querySelectorAll('.avatar-upload-btn').forEach(el => el.style.display='flex');
+      const bgBtn = document.getElementById('landingBgPlusBtn');
+      if(bgBtn) bgBtn.style.display = 'flex';
+      showToast('EDIT MODE ON ✦ — tap + to add photos');
+      if(typeof bgmEnableAdmin==='function') bgmEnableAdmin();
+    }, 400);
+  };
+  function enableEditMode(){ window.enableEditMode(); }
+
+  // ── BGM ─────────────────────────────────────────────────────────────────
+  var _bgmReady=false, _bgmAdmin=false;
+  var _bgmAudio=document.getElementById('bgmAudio');
+  var _bgmPlayIcon=document.getElementById('bgmPlay');
+  var _bgmMuteIcon=document.getElementById('bgmMute');
+
+  function _bgmSetIcon(playing){
+    _bgmPlayIcon.style.display = playing ? 'block' : 'none';
+    _bgmMuteIcon.style.display = playing ? 'none'  : 'block';
+  }
+  function _bgmInit(){
+    var attempts=0;
+    var t=setInterval(function(){
+      attempts++;
+      if(window._db){ clearInterval(t); _bgmFetch(); }
+      else if(attempts>20){ clearInterval(t); }
+    },500);
+  }
+  function _bgmFetch(){
+    window._db.ref(IMG_PATH+'/bgm_track').once('value',function(snap){
+      var d=snap.val();
+      if(d&&d.url) _bgmLoadUrl(d.url);
+    });
+  }
+function _bgmLoadUrl(url){
+  _bgmAudio.src = url;
+  _bgmAudio.preload = 'auto';
+  _bgmReady = true;
+  _bgmAudio.load();
+}
+  window.bgmToggle=function(){
+    if(_bgmAdmin){ _bgmPick(); return; }
+    if(!_bgmReady){ return; }
+    if(_bgmAudio.paused){ _bgmAudio.play().catch(function(){}); }
+    else { _bgmAudio.pause(); }
+  };
+  _bgmAudio.addEventListener('play',  function(){ _bgmSetIcon(true); });
+  _bgmAudio.addEventListener('pause', function(){ _bgmSetIcon(false); });
+  _bgmAudio.addEventListener('ended', function(){ _bgmSetIcon(false); });
+  window.bgmEnableAdmin=function(){
+    _bgmAdmin=true;
+    document.getElementById('bgmBtn').classList.add('admin-mode');
+    showToast('TAP ♪ TO UPLOAD MUSIC');
+  };
+  function _bgmPick(){
+    var inp=document.createElement('input');
+    inp.type='file'; inp.accept='audio/*';
+    inp.onchange=function(e){
+      var file=e.target.files[0]; if(!file) return;
+      showToast('UPLOADING…');
+      var fd=new FormData();
+      fd.append('file',file);
+      fd.append('upload_preset',UPLOAD_PRESET);
+      fd.append('folder',COUPLE_FOLDER+'/audio');
+      var xhr=new XMLHttpRequest();
+      xhr.open('POST','https://api.cloudinary.com/v1_1/'+CLOUD_NAME+'/video/upload');
+      xhr.onload=function(){
+        try{
+          var res=JSON.parse(xhr.responseText);
+          if(!res.secure_url) throw 0;
+          if(window._db) window._db.ref(IMG_PATH+'/bgm_track').set({url:res.secure_url,ts:Date.now()});
+          _bgmAdmin=false;
+          document.getElementById('bgmBtn').classList.remove('admin-mode');
+          _bgmLoadUrl(res.secure_url);
+          showToast('MUSIC UPLOADED ❖');
+        }catch(err){ showToast('UPLOAD FAILED'); }
+      };
+      xhr.onerror=function(){ showToast('UPLOAD FAILED'); };
+      xhr.send(fd);
+    };
+    inp.click();
+  }
+
+  // ── IMAGE UPLOAD ──────────────────────────────────────────────────────────
+  function uploadToCloudinary(file){
+    return new Promise(function(resolve, reject){
+      const url = 'https://api.cloudinary.com/v1_1/' + CLOUD_NAME + '/image/upload';
+      const fd = new FormData();
+      fd.append('file', file);
+      fd.append('upload_preset', UPLOAD_PRESET);
+      fd.append('folder', COUPLE_FOLDER);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.onload = function(){
+        if(xhr.status === 200){
+          try{
+            const data = JSON.parse(xhr.responseText);
+            if(data.secure_url) resolve(data.secure_url);
+            else{ showToast('ERROR: ' + (data.error && data.error.message || 'Failed')); reject(new Error('No URL')); }
+          } catch(e){ reject(e); }
+        } else { showToast('UPLOAD ERROR: ' + xhr.status); reject(new Error('Status: ' + xhr.status)); }
+      };
+      xhr.onerror = function(){ showToast('NETWORK ERROR'); reject(new Error('Network error')); };
+      xhr.send(fd);
+    });
+  }
+  function saveImgData(slotKey, data){ if(db) db.ref(IMG_PATH + '/' + slotKey).set(data); }
+
+  window.applyImage = function(slotKey, val){
+    if(slotKey === 'landing_bg'){
+      const img = document.getElementById('landingBgImg');
+      const scrim = document.getElementById('landingScrim');
+      if(img){ img.src = val.url; img.style.display = 'block'; }
+      if(scrim){ scrim.style.display = 'block'; }
+      return;
+    }
+    const el = document.querySelector('[data-slot="'+slotKey+'"]');
+    if(!el) return;
+    if(slotKey.startsWith('avatar_')){
+      const circle = el.querySelector('.family-photo');
+      if(!circle) return;
+      circle.innerHTML = '';
+      circle.style.cssText += ';overflow:hidden;padding:0;position:relative;';
+      const img = document.createElement('img');
+      img.className = 'slot-img';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;';
+      img.onerror = function(){ this.remove(); };
+      img.src = val.url;
+      circle.appendChild(img);
+      el.onclick = function(){ if(editMode) pickFile(slotKey); };
+    }
+  };
+
+  function pickFile(slotKey){
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = 'image/*';
+    inp.onchange = function(e){
+      const file = e.target.files[0];
+      if(!file) return;
+      showToast('UPLOADING…');
+      uploadToCloudinary(file).then(function(url){
+        const data = {url:url, x:50, y:50, zoom:1};
+        saveImgData(slotKey, data);
+        applyImage(slotKey, data);
+        showToast('DONE ✦');
+      }).catch(function(err){ console.error(err); showToast('UPLOAD FAILED'); });
+    };
+    inp.click();
+  }
+  window.pickAvatar = function(slotKey){ if(editMode) pickFile(slotKey); };
+  function pickAvatar(s){ window.pickAvatar(s); }
+
+  function startImageListener(){
+    if(!db){ setTimeout(startImageListener, 500); return; }
+    db.ref(IMG_PATH).on('value', snap => {
+      if(!snap.exists()) return;
+      snap.forEach(child => {
+        const val = child.val();
+        if(val && val.url) applyImage(child.key, val);
+      });
+    });
+  }
+
+  // Long-press DIGIWED → dashboard
+  (function(){
+    const dg = document.getElementById('digiwedLink');
+    if(!dg) return;
+    let t;
+    const go = ()=>{ t=setTimeout(()=>{ window.location.href='dashboard.html'; },1800); };
+    const cancel = ()=>clearTimeout(t);
+    dg.addEventListener('touchstart',go,{passive:true});
+    dg.addEventListener('touchend',cancel,{passive:true});
+    dg.addEventListener('mousedown',go);
+    dg.addEventListener('mouseup',cancel);
+  })();
+
+  // ── GUEST PARAM ───────────────────────────────────────────────────────────
+  const urlParams = new URLSearchParams(window.location.search);
+  const GUEST_NAME = (urlParams.get('guest')||'').trim();
+  if(GUEST_NAME){
+    document.getElementById('landingGuest').textContent = 'Dear ' + GUEST_NAME + ',';
+    document.getElementById('invitePersonal').textContent = 'Dearest ' + GUEST_NAME + ',';
+    document.getElementById('rsvpGreet').textContent = GUEST_NAME + ", we'd love to have you with us 🌿";
+    document.getElementById('nameField').style.display = 'none';
+  }
+
+  // ── OPEN INVITE ───────────────────────────────────────────────────────────
+ // ── OPEN INVITE ───────────────────────────────────────────────────────────
+
+function openInvite(){
+
+  const landing = document.getElementById('landing');
+
+  // Start music immediately when envelope is tapped
+  if(_bgmAudio.src){
+    _bgmAudio.currentTime = 0;
+    _bgmAudio.play().catch(function(){});
+  }
+
+  // Start opening animation
+  landing.classList.add('opening');
+
+  // Wait for animation to finish
+  setTimeout(()=>{
+
+    landing.classList.add('gone');
+
+    document.getElementById('main').classList.add('show');
+
+    document.body.style.overflow = 'auto';
+
+    // Reveal animations
+    const io = new IntersectionObserver(
+      es => es.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('on');
+        }
+      }),
+      {threshold:.1}
+    );
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      io.observe(el);
+    });
+
+    // Scroll badge
+    window.addEventListener('scroll',()=>{
+      const b = document.getElementById('mono-badge');
+
+      if(b){
+        if(window.scrollY > 180){
+          b.classList.add('show');
+        }else{
+          b.classList.remove('show');
+        }
+      }
+    },{passive:true});
+
+    // RSVP
+    checkExistingRsvp();
+
+    // Wishes
+    loadWishes();
+
+   
+
+    // Images
+    setTimeout(startImageListener, 800);
+    setTimeout(startImageListener, 3000);
+
+    // Landing background button
+    const bgBtn = document.getElementById('landingBgPlusBtn');
+
+    if(bgBtn && !bgBtn._wired){
+
+      bgBtn._wired = true;
+
+      bgBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        pickFile('landing_bg');
+      });
+
+    }
+
+  },1000);
+
+}
+  document.body.style.overflow = 'hidden';
+  // Load landing hero as early as possible
+  setTimeout(startImageListener, 400);
+
+  // ── RSVP FORM WIRING ──────────────────────────────────────────────────────
+  document.querySelectorAll('.ev-check').forEach(cb=>{
+    cb.addEventListener('change',()=>{
+      const pick = cb.closest('.event-pick');
+      const cnt  = pick.querySelector('.ev-count');
+      if(cb.checked){pick.classList.add('active');cnt.style.display='flex';}
+      else{pick.classList.remove('active');cnt.style.display='none';pick.querySelector('.mini-count').textContent='1';}
+    });
+  });
+  const MAX_PER_EVENT = 4;
+  function evCount(btn,delta){
+    const s = btn.parentElement.querySelector('.mini-count');
+    let n = parseInt(s.textContent,10)||1;
+    if(delta>0 && n>=MAX_PER_EVENT){ showToast('Maximum '+MAX_PER_EVENT+' guests per function'); return; }
+    s.textContent = Math.max(1,Math.min(MAX_PER_EVENT,n+delta));
+  }
+  let attending = true;
+  function setAttending(val){
+    attending = val;
+    document.getElementById('attendYes').classList.toggle('active', val);
+    document.getElementById('attendNo').classList.toggle('active',!val);
+    document.getElementById('fullForm').style.display = val ? 'block' : 'none';
+  }
+  function addToCal(title,start,end,loc){
+    const fmt = s=>s.replace(/[-:]/g,'');
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${fmt(start+'00')}/${fmt(end+'00')}&location=${encodeURIComponent(loc)}`;
+    window.open(url,'_blank');
+  }
+  function showToast(m){
+    const t=document.getElementById('toast');
+    t.textContent=m; t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),3000);
+  }
+
+  // ── RSVP LOGIC ────────────────────────────────────────────────────────────
+  let existingRsvpKey = null;
+  let existingRsvpData = null;
+  function checkExistingRsvp(){
+    if(!GUEST_NAME || !db) return;
+    db.ref(RSVP_PATH).orderByChild('name').equalTo(GUEST_NAME).limitToFirst(1).once('value', snap => {
+      if(!snap.exists()) return;
+      const data = snap.val();
+      const key  = Object.keys(data)[0];
+      existingRsvpKey = key;
+      showExistingRsvp(data[key]);
+    });
+  }
+  function showExistingRsvp(r){
+    existingRsvpData = r;
+    document.getElementById('rsvpForm').style.display = 'none';
+    document.getElementById('rsvpExisting').classList.add('show');
+    document.getElementById('exAttending').textContent = r.attending ? '✓ Yes, I will be attending' : '✗ Unable to attend';
+    document.getElementById('exTime').textContent = r.time || '—';
+    if(r.attending && r.events && r.events.length){
+      document.getElementById('exEventsRow').style.display = 'block';
+      document.getElementById('exEvents').innerHTML = r.events.map(e => {
+        const n = (r.eventsDetail && r.eventsDetail[e]) || r.members || 1;
+        return `<span class="ex-tag">${e} × ${n}</span>`;
+      }).join('');
+    } else {
+      document.getElementById('exEventsRow').style.display = 'none';
+    }
+    if(r.attending && r.accommodation){
+      document.getElementById('exAccRow').style.display = 'block';
+      document.getElementById('exAcc').textContent = 'Yes — needed for [DATE] night';
+    } else {
+      document.getElementById('exAccRow').style.display = 'none';
+    }
+    if(r.message){
+      document.getElementById('exMsgRow').style.display = 'block';
+      document.getElementById('exMsg').textContent = r.message;
+    }
+    document.getElementById('exSubMsg').textContent = `You've already responded${GUEST_NAME?' '+GUEST_NAME:''}. Here's what we have.`;
+  }
+  function editRsvp(){
+    if(existingRsvpKey && db) db.ref(RSVP_PATH + '/' + existingRsvpKey).remove();
+    document.getElementById('rsvpExisting').classList.remove('show');
+    document.getElementById('rsvpForm').style.display = 'block';
+    if(existingRsvpData && existingRsvpData.message){
+      document.getElementById('rsvpMessage').value = existingRsvpData.message;
+    }
+    existingRsvpKey = null;
+  }
+  // ── CONFETTI POPPERS ──────────────────────────────────────────────────────
+  function fireConfetti(){
+    const canvas = document.createElement('canvas');
+    canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    const W = window.innerWidth, H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.scale(dpr, dpr);
+    const colors = ['#a3812f','#c6a35c','#e9dcc0','#425c39','#567045','#f7f2e7','#ffffff','#e8b94a','#d98a5c','#b9902f'];
+    const GRAV = 0.38;               // real gravity, no terminal cap → pieces free-fall naturally
+    const MAX_FRAMES = 300;          // safety backstop (~5s)
+    const parts = [];
+    // A single pop that fires pieces up hard; gravity then pulls them back down.
+    function burst(x, y, angle, spread, count, power){
+      for(let i = 0; i < count; i++){
+        const a = angle + (Math.random() - 0.5) * spread;
+        const speed = power * (0.78 + Math.random() * 0.5);
+        const shape = Math.random();
+        parts.push({
+          x, y,
+          vx: Math.cos(a) * speed,
+          vy: Math.sin(a) * speed * 1.1,   // extra lift so they shoot all the way to the top
+          w: 6 + Math.random() * 7, h: 9 + Math.random() * 10,
+          color: colors[(Math.random() * colors.length) | 0],
+          rot: Math.random() * Math.PI * 2, vr: (Math.random() - 0.5) * 0.3,
+          sway: Math.random() * Math.PI * 2,
+          swaySpeed: 0.05 + Math.random() * 0.05,
+          swayAmp: 0.3 + Math.random() * 0.8,          // just a subtle flutter; gravity dominates
+          type: shape < 0.4 ? 'rect' : (shape < 0.72 ? 'strip' : 'circle'),
+          life: 0, ttl: 200 + Math.random() * 60
+        });
+      }
+    }
+    const UP = -Math.PI / 2;
+    // Fire ONE time: two corner poppers aimed steeply up + a centre fountain.
+    burst(W * 0.06, H * 1.0,  UP + 0.24, 0.5, 60, 29);   // bottom-left → up & inward
+    burst(W * 0.94, H * 1.0,  UP - 0.24, 0.5, 60, 29);   // bottom-right → up & inward
+    burst(W * 0.50, H * 1.02, UP,        0.7, 95, 30);   // centre fountain, straight up to the top
+    let frame = 0;
+    (function tick(){
+      frame++;
+      ctx.clearRect(0, 0, W, H);
+      let alive = false;
+      for(const p of parts){
+        if(p.life > p.ttl) continue;
+        alive = true;
+        p.life++;
+        p.vy += GRAV;                              // accelerate downward — true free fall
+        p.vx *= 0.99;
+        p.sway += p.swaySpeed;
+        p.x += p.vx + Math.cos(p.sway) * p.swayAmp; // light flutter on the way down
+        p.y += p.vy;
+        p.rot += p.vr;                              // tumble
+        const fadeStart = p.ttl * 0.8;
+        const alpha = p.life > fadeStart ? Math.max(0, 1 - (p.life - fadeStart) / (p.ttl - fadeStart)) : 1;
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        if(p.type === 'circle'){
+          ctx.beginPath(); ctx.ellipse(0, 0, p.w / 2, p.h / 2, 0, 0, Math.PI * 2); ctx.fill();
+        } else if(p.type === 'strip'){
+          ctx.fillRect(-p.w / 4, -p.h / 2, p.w / 2, p.h * 1.3);
+        } else {
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        }
+        ctx.restore();
+      }
+      if(alive && frame < MAX_FRAMES){ requestAnimationFrame(tick); }
+      else { canvas.remove(); }
+    })();
+  }
+
+  function submitRsvp(){
+    const nameInput = document.getElementById('guestNameInput');
+    const name = GUEST_NAME || nameInput.value.trim();
+    if(!name){
+      showToast('Please enter your name');
+      if(!GUEST_NAME){ nameInput.classList.add('input-error'); nameInput.focus(); nameInput.scrollIntoView({block:'center',behavior:'smooth'}); }
+      return;
+    }
+    let eventsList=[],eventsDetail={},totalMembers=0,maxMembers=0;
+    if(attending){
+      document.querySelectorAll('.ev-check:checked').forEach(cb=>{
+        const ev=cb.value, pick=cb.closest('.event-pick');
+        const n=parseInt(pick.querySelector('.mini-count').textContent,10)||1;
+        eventsList.push(ev); eventsDetail[ev]=n; totalMembers+=n;
+        if(n>maxMembers) maxMembers=n;
+      });
+      if(eventsList.length===0){showToast('Please select at least one function');return;}
+    }
+    const entry = {
+      name, attending,
+      events:eventsList, eventsDetail,
+      members:maxMembers, totalMembers,
+      accommodation: false,
+      message:(document.getElementById('rsvpMessage').value||'').trim().slice(0,300),
+      time:new Date().toLocaleString('en-IN',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}),
+      ts:Date.now()
+    };
+    const btn = document.getElementById('submitBtn');
+    btn.disabled=true; btn.querySelector('span').textContent='SENDING…';
+    const done=()=>{
+      btn.classList.add('confirmed');
+      btn.querySelector('span').textContent = 'RSVP CONFIRMED ✓';
+      fireConfetti();
+      setTimeout(()=>{
+        document.getElementById('rsvpForm').style.display='none';
+        document.getElementById('success').classList.add('show');
+        document.getElementById('successMsg').textContent = attending
+          ? `Thank you, ${name}! We can't wait to celebrate with you.`
+          : `Thank you, ${name}. You'll be missed, but your blessings mean the world.`;
+      }, 1200);
+    };
+    if(!db){setTimeout(done,500);return;}
+    const key=(name.replace(/[^a-zA-Z0-9]/g,'_').toLowerCase()||'guest')+'_'+Date.now();
+    db.ref(RSVP_PATH+'/'+key).set(entry).then(done).catch(err=>{
+      btn.disabled=false; btn.querySelector('span').textContent='CONFIRM RSVP';
+      showToast('Failed. Please try again.'); console.error(err);
+    });
+  }
+
+  // ── WISHES WALL ───────────────────────────────────────────────────────────
+  const PAGE_SIZE = 6;
+  let allWishes = [];
+  let visibleWishCount = 0;
+  let recentlySubmittedTs = null;
+
+  function loadWishes(){
+    if(!db) return;
+    db.ref(WISH_PATH).orderByKey().limitToLast(500).once('value', snap => {
+      allWishes = [];
+      snap.forEach(c => { allWishes.push({key:c.key,...c.val()}); });
+      allWishes.reverse();
+      visibleWishCount = 0;
+      renderWishes();
+    }, err => console.error('loadWishes failed:', err));
+  }
+  function renderWishes(){
+    const grid = document.getElementById('wgrid');
+    if(visibleWishCount === 0) grid.innerHTML = '';
+    const nextCount = Math.min(visibleWishCount + PAGE_SIZE, allWishes.length);
+    allWishes.slice(visibleWishCount, nextCount).forEach(w => grid.insertAdjacentHTML('beforeend', wishCard(w)));
+    visibleWishCount = nextCount;
+    document.getElementById('loadmore-wrap').style.display = visibleWishCount < allWishes.length ? 'block' : 'none';
+  }
+  function loadMore(){ renderWishes(); }
+  function wishCard(w){
+    return `<div class="wish-card">
+      <div class="wish-card-name">${esc(w.name)}</div>
+      <div class="wish-card-msg">${esc(w.msg)}</div>
+      <div class="wish-card-time">${w.time||''}</div>
+    </div>`;
+  }
+  function esc(s){ const d=document.createElement('div');d.textContent=s||'';return d.innerHTML; }
+  function submitWish(){
+    const name = document.getElementById('wisherName').value.trim();
+    const msg  = document.getElementById('wisherMsg').value.trim();
+    if(!name || !msg){ showToast('Please enter your name and wish'); return; }
+    const btn = document.querySelector('.wfl-submit');
+    const ts = Date.now();
+    if(recentlySubmittedTs && ts - recentlySubmittedTs < 10000){ showToast('Please wait before sending again'); return; }
+    btn.disabled=true; btn.textContent='SENDING…';
+    const entry = { name, msg, time: new Date().toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}), ts };
+    if(!db){ showToast('Wish sent! ✦'); btn.disabled=false; btn.textContent='SEND WISH ✦'; return; }
+    db.ref(WISH_PATH).push(entry).then(()=>{
+      recentlySubmittedTs = ts;
+      document.getElementById('wisherName').value='';
+      document.getElementById('wisherMsg').value='';
+      btn.textContent='SEND WISH ✦'; btn.disabled=false;
+      showToast('Wish sent! ✦');
+      loadWishes();
+    }).catch(e=>{ console.error(e); showToast('Failed. Try again.'); btn.disabled=false; btn.textContent='SEND WISH ✦'; });
+  }
+  /* ✨ GOLDEN FIREWORK ON MOUSE */
+
+let lastFirework = 0;
+
+document.addEventListener("mousemove", function(e) {
+
+  const now = Date.now();
+
+  /* Prevent too many fireworks */
+  if (now - lastFirework < 300) return;
+
+  lastFirework = now;
+
+  const firework = document.createElement("div");
+
+  firework.className = "cursor-firework";
+
+  firework.style.left = e.clientX + "px";
+  firework.style.top = e.clientY + "px";
+
+  /* Create the golden rays */
+  for (let i = 0; i < 12; i++) {
+
+    const ray = document.createElement("span");
+
+    ray.style.setProperty(
+      "--angle",
+      (i * 30) + "deg"
+    );
+
+    firework.appendChild(ray);
+  }
+
+  document.body.appendChild(firework);
+
+  /* Remove after animation */
+  setTimeout(() => {
+    firework.remove();
+  }, 800);
+
+});
+</script>
+
+</body>
+</html>
